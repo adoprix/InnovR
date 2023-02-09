@@ -75,7 +75,7 @@ static void help(void)
 	puts("led                             - led test");
 	puts("ledreal                         - real led test");
 	puts("switches                        - switches test");
-	puts("knights                         - knight rideeeeeers");
+	puts("knight                          - knight rideeeeeers");
 }
 
 static void reboot(void)

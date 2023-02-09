@@ -4,6 +4,7 @@ __pycache__/
 build/
 *.csv
 *.o
+*.d
 !crt0*
 *.bin
 *.elf

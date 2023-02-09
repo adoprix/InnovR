@@ -3,9 +3,9 @@ BUILD_DIR=../build/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-OBJECTS=isr.o main.o
-
 all: firmware.bin
+
+OBJECTS=isr.o main.o
 
 # pull in dependency info for *existing* .o files
 -include $(OBJECTS:.o=.d)
