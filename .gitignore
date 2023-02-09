@@ -8,3 +8,4 @@ build/
 !crt0*
 *.bin
 *.elf
+.idea/
