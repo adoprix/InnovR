@@ -1,4 +1,5 @@
 BUILD_DIR=../build/
+RESSOURCES=../../ressources
 
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
@@ -28,13 +29,14 @@ firmware.elf: $(OBJECTS)
 	chmod -x $@
 	
 main.o: main.c
-	$(compile)
+	$(compile) -I$(RESSOURCES)
+	# il faut dire où trouver les header et les sources du code rajouté (pour l'AES par ex)
 	
 crt0.o: $(CPU_DIRECTORY)/crt0.S
 	$(assemble)
 	
 %.o: %.c
-	$(compile)
+	$(compile) -I$(RESSOURCES)
 	
 %.o: %.S
 	$(assemble)

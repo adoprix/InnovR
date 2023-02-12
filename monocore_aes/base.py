@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
-#from migen import *
+from migen import *
 
-from migen.genlib.io import CRG
 
 from litex.build.generic_platform import *
 from litex.build.altera import AlteraPlatform
 
+from litex.soc.doc import generate_docs, generate_svd
+from litex.soc.cores.gpio import GPIOOut
+from litex.soc.cores.clock import Max10PLL
 from litex.soc.integration.soc_core import *
 from litex.soc.integration.builder import *
 
@@ -40,13 +42,6 @@ _io = [
 
     ("user_btn", 0, Pins("A7"), IOStandard("3.3-V LVTTL")),
 
-    # ("user_rgb_led", 0,
-    #     Subsignal("r", Pins("N16")),
-    #     Subsignal("g", Pins("R11")),
-    #     Subsignal("b", Pins("G14")),
-    #     IOStandard("LVCMOS33"),
-    # ),
-
     ("display_cs_n", 0, Pins("C14 E15 C15 C16 E16 D17 C17 D15"), IOStandard("3.3-V LVTTL")),
     ("display_abcdefg", 0, Pins("C18 D18 E18 B16 A17 A18 B17 A16"), IOStandard("3.3-V LVTTL")),
 
@@ -76,30 +71,50 @@ class Platform(AlteraPlatform):
 # Create our platform (fpga interface)
 platform = Platform()
 
+
+class _CRG(Module):  # Clock region definition
+    def __init__(self, platform, sys_clk_freq):
+        self.rst = Signal()
+        self.clock_domains.cd_sys = ClockDomain()
+
+        clk50 = platform.request("clk50")
+
+        # On instancie un PLL sortant un signal d'hologe de fréquence sys_clock_freq
+        self.submodules.pll = pll = Max10PLL(speedgrade="-7")
+        self.comb += pll.reset.eq(self.rst)
+        pll.register_clkin(clk50, 50e6)
+        pll.create_clkout(self.cd_sys, sys_clk_freq)
+
+
 # Create our soc (fpga description)
 class BaseSoC(SoCCore):
     def __init__(self, platform):
         sys_clk_freq = int(50e6)
 
         # SoC with CPU
-        SoCCore.__init__(self, platform,
+        SoCCore.__init__(self, platform, sys_clk_freq,
             cpu_type                 = "vexriscv",
-            clk_freq                 = 50e6,
             ident                    = "LiteX CPU on DE10-Lite", ident_version=True,
             integrated_rom_size      = 0x8000,
             integrated_main_ram_size = 0x10000,
             integrated_sram_size=0x8000)
 
         # Clock Reset Generation
-        self.submodules.crg = CRG(platform.request("clk50"), ~platform.request("cpu_reset"))
+        self.submodules.crg = _CRG(platform, sys_clk_freq)
 
         # Led
-        user_leds = platform.request_all("user_led")
+	#user_led = platform.request_all("user_led") # ne fonctionne pas jsp pourquoi
+        user_leds = [platform.request("user_led", i) for i in range(10)]
         self.submodules.leds = Led(Cat(*user_leds))
         self.add_csr("leds")
 
+        # # GPIOs
+        # gpio = platform.request_all("gpio_0")
+        # self.submodules.gpio = GPIOOut(gpio)
+        # self.add_csr("gpio")
+
         # Switches
-        user_switches = platform.request_all("user_sw")
+        user_switches = [platform.request("user_sw", i) for i in range(10)]
         self.submodules.switches = Switch(Cat(*user_switches))
         self.add_csr("switches")
 
@@ -122,3 +137,8 @@ soc = BaseSoC(platform)
 
 builder = Builder(soc, output_dir="build", csr_csv="test/csr.csv")
 builder.build(build_name="top")
+
+generate_docs(soc, "build/documentation",
+                        project_name="My SoC",
+                        author="LiteX User")
+generate_svd(soc, "build/documentation")

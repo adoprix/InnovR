@@ -136,7 +136,7 @@ static uint8_t get_hex_rep(char *str_input, uint8_t in_size, uint8_t *hex_out)
 /**
  * @brief Encryption top function
  * 
- * @param counter 		The pointer for the counter
+ * @param counter 	The pointer for the counter
  * @param len_counter 	The size of the counter
  */
 static void encrypts(uint8_t *nonce, size_t nlen)
