@@ -2,6 +2,7 @@ gateware/
 __pycache__/
 *.vcd
 build/
+obj/
 *.csv
 *.o
 *.d
