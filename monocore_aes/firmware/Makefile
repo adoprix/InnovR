@@ -26,8 +26,9 @@ firmware.elf: $(OBJECTS)
 		-L$(BUILD_DIR)/software/libbase \
 		-L$(TINYCRYPT) \
 		$(LIBS:lib%=-l%) \
-		-ltinycrypt \
-		-lbase -lcompiler_rt -lgcc
+		#-ltinycrypt \
+		#-lbase 
+		-lcompiler_rt -lgcc
 	chmod -x $@
 	
 main.o: main.c $(RESSOURCES)/mbedtls/source/gcm.c $(RESSOURCES)/mbedtls/source/cipher.c  $(TINYCRYPT)/libtinycrypt.a

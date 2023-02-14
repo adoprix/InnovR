@@ -6,7 +6,7 @@
 #define KEY_SIZE_BITS    128
 #define KEY_SIZE_BYTES   16
 uint8_t nonce[NONCE_SIZE];
-TCCtrPrng_t ctx;
+//TCCtrPrng_t ctx;
 
 
 /*-----------------------------------------------------------------------*/
@@ -412,13 +412,13 @@ int main(void)
 
 	uint8_t entropy[256] = {0x7f, 0x40, 0x80, 0x46, 0x93, 0x55, 0x2e, 0x31, 0x75, 0x23, 0xfd, 0xa6, 0x93, 0x5a, 0x5b, 0xc8, 0x14, 0x35, 0x3b, 0x1f
 							, 0xbb, 0x7d, 0x33, 0x49, 0x64, 0xac, 0x4d, 0x1d, 0x12, 0xdd, 0xcc, 0xce};
-
+/*
 	result = tc_ctr_prng_init(&ctx, &entropy[0], sizeof(entropy), NULL, 0);
 	if (result != 1) {
 		printf("\e[91;1mError in the PRNG init\e[0m\n");
 	}
 
-
+*/
 	while(1) {
 		console_service();
 	}
