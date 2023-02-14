@@ -1,5 +1,6 @@
 BUILD_DIR=../build/
 RESSOURCES=../../ressources
+TINYCRYPT=$(RESSOURCES)/tinycrypt/lib
 
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
@@ -23,20 +24,23 @@ firmware.elf: $(OBJECTS)
 		$(OBJECTS) \
 		$(PACKAGES:%=-L$(BUILD_DIR)/software/%) \
 		-L$(BUILD_DIR)/software/libbase \
-		-L$(BUILD_DIR)/software/libcompiler_rt \
+		-L$(TINYCRYPT) \
 		$(LIBS:lib%=-l%) \
+		-ltinycrypt \
 		-lbase -lcompiler_rt -lgcc
 	chmod -x $@
 	
-main.o: main.c
-	$(compile) -I$(RESSOURCES)
-	# il faut dire où trouver les header et les sources du code rajouté (pour l'AES par ex)
+main.o: main.c $(RESSOURCES)/mbedtls/source/gcm.c $(RESSOURCES)/mbedtls/source/cipher.c  $(TINYCRYPT)/libtinycrypt.a
+	$(compile) -I$(RESSOURCES) -I$(TINYCRYPT)/include
 	
 crt0.o: $(CPU_DIRECTORY)/crt0.S
 	$(assemble)
 	
 %.o: %.c
-	$(compile) -I$(RESSOURCES)
+	$(compile) -I$(RESSOURCES) -I$(TINYCRYPT)/include
+
+%.o: $(TINYCRYPT)/lib/source/%.c
+	$(COMPILE)
 	
 %.o: %.S
 	$(assemble)

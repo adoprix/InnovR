@@ -418,6 +418,7 @@ int main(void)
 		printf("\e[91;1mError in the PRNG init\e[0m\n");
 	}
 
+
 	while(1) {
 		console_service();
 	}

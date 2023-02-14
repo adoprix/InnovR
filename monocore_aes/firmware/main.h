@@ -12,6 +12,6 @@
 
 #include <mbedtls/mbedtls/gcm.h>
 #include <mbedtls/mbedtls/cipher.h>
-#include <tinycrypt/ctr_prng.h>
+#include <tinycrypt/lib/include/tinycrypt/ctr_prng.h>
 
 #endif
