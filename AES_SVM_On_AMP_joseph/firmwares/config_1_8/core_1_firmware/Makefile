@@ -3,7 +3,7 @@ include $(SOC_DIRECTORY)/software/common.mak
 
 OBJDIR = ./obj
 EXT_LIBDIR = ../../../
-CPU_DIRECTORY=/home/litex_root/litex/litex/soc/cores/cpu/firev
+CPU_DIRECTORY=/home/jamorin/litex_root/litex/litex/soc/cores/cpu/firev
 
 AMP_LIB_OBJ := $(OBJDIR)/amp_utils.o \
 			$(OBJDIR)/amp_comms.o

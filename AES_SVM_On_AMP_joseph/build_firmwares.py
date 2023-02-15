@@ -87,6 +87,8 @@ def main():
     with open("crt0.d", 'w', encoding='utf-8') as f:
         f.write(f"crt0.o: {args.litex_root}/litex/litex/soc/cores/cpu/{configuration['name_2']}/crt0.S")
 
+
+
     # Set build path
 
     if archi == "Heterogen":

@@ -1,0 +1,1 @@
+crt0.o: /home/litex_rootlitex/litex/soc/cores/cpu/femtorv/crt0.S

@@ -3,6 +3,7 @@ __pycache__/
 *.vcd
 build/
 obj/
+*.map
 *.csv
 *.o
 *.d
