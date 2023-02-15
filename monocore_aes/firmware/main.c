@@ -6,7 +6,7 @@
 #define KEY_SIZE_BITS    128
 #define KEY_SIZE_BYTES   16
 uint8_t nonce[NONCE_SIZE];
-//TCCtrPrng_t ctx;
+TCCtrPrng_t ctx;
 
 
 /*-----------------------------------------------------------------------*/

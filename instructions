@@ -3,3 +3,5 @@ charger le firmware dans un dual core :
 - build le firmware : "./build_firmware.py --make_clean"
 - faire un litex_term par coeur, donner en paramètre l'image indiquant dans quelle partie de la mémoire (interne au coeur (sram) ou externe (sp)) la charger :
 "./litex_term.py /dev/ttyUSBx --images=/home/jamorin/InnovR/AES_SVM_On_AMP_joseph/firmwares/config_1_8/core_0_firmware/boot.json"
+
+application pour mesurer le temps d'exécution d'une appli dasn AES_.../amp_lib/.../amp_utils.h/c fonctions amp_millis

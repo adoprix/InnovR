@@ -26,8 +26,8 @@ firmware.elf: $(OBJECTS)
 		-L$(BUILD_DIR)/software/libbase \
 		-L$(TINYCRYPT) \
 		$(LIBS:lib%=-l%) \
-		#-ltinycrypt \
-		#-lbase 
+		-ltinycrypt \
+		-lbase 
 		-lcompiler_rt -lgcc
 	chmod -x $@
 	
