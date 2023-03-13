@@ -1,0 +1,3 @@
+[submodule "AES_SVM_ON_AMP"]
+	path = AES_SVM_ON_AMP
+	url = https://github.com/jwfaye/AES_SVM_On_AMP.git
