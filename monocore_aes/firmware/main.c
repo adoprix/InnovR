@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include "aes.h"
 
 #define MAC_LEN 	     16
 #define NONCE_SIZE  	 13
@@ -86,6 +86,7 @@ static void help(void)
 	puts("ledreal                         - real led test");
 	puts("switches                        - switches test");
 	puts("knight                          - knight rideeeeeers");
+	puts("encrypt			             - encrypt test");
 }
 
 /*-----------------------------------------------------------------------*/
@@ -268,7 +269,7 @@ static void encrypts(uint8_t *nonce, size_t nlen)
 	printf("\n");
 
 
-	printf("\e[94;1mChiper text: \e[0m");
+	printf("\e[94;1mCipher text: \e[0m");
 	for(int i=0; i < cipher_size; i++)
 	{
 		printf("%02x", ciphertext[i]);
@@ -390,6 +391,11 @@ static void console_service(void)
 	    switches_test();
 	else if(strcmp(token, "knight") == 0)
 	    knight_riderrrrrrr();
+	else if(strcmp(token, "encrypt") == 0) {
+	    uint8_t num = 4;
+	    encrypts(&num, 1);
+	    decrypts();
+	}
 	prompt();
 }
 
@@ -412,13 +418,13 @@ int main(void)
 
 	uint8_t entropy[256] = {0x7f, 0x40, 0x80, 0x46, 0x93, 0x55, 0x2e, 0x31, 0x75, 0x23, 0xfd, 0xa6, 0x93, 0x5a, 0x5b, 0xc8, 0x14, 0x35, 0x3b, 0x1f
 							, 0xbb, 0x7d, 0x33, 0x49, 0x64, 0xac, 0x4d, 0x1d, 0x12, 0xdd, 0xcc, 0xce};
-/*
+
 	result = tc_ctr_prng_init(&ctx, &entropy[0], sizeof(entropy), NULL, 0);
 	if (result != 1) {
 		printf("\e[91;1mError in the PRNG init\e[0m\n");
 	}
 
-*/
+
 	while(1) {
 		console_service();
 	}
