@@ -18,7 +18,7 @@ SECTIONS
 
 		*(.text .stub .text.* .gnu.linkonce.t.*)
 		_etext = .;
-	} > sram
+	} > main_ram
 
 	.rodata :
 	{
@@ -28,7 +28,7 @@ SECTIONS
 		*(.rodata1)
 		. = ALIGN(8);
 		_erodata = .;
-	} > sram
+	} > main_ram
 
 	.data :
 	{
@@ -40,24 +40,8 @@ SECTIONS
 		*(.sdata .sdata.* .gnu.linkonce.s.*)
 		. = ALIGN(8);
 		_edata = .;
-	} > main_ram AT > sram
+	} > sram AT > main_ram
 
-	.shared_ram :
-	{
-		. = ALIGN(8);
-		KEEP(*(shared_ram_first));
-		KEEP(*(shared_ram_second));
-		KEEP(*(shared_ram));
-		. = ALIGN(8);
-	} > sram
-
-	.private_ram :
-	{
-		. = ALIGN(8);
-		KEEP(*(priv_sp));
-		KEEP(*(priv_sp_last));
-		. = ALIGN(8);
-	} > sram
 
 	.bss :
 	{
@@ -77,6 +61,7 @@ SECTIONS
 
 PROVIDE(__heap_start = _end );
 PROVIDE(__heap_end = ORIGIN(sram) + LENGTH(sram));
+
 PROVIDE(_fstack = ORIGIN(sram) + LENGTH(sram));
 
 PROVIDE(_fdata_rom = LOADADDR(.data));
