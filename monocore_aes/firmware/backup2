@@ -3,13 +3,14 @@ BUILD_DIR?=../build
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-RESSOURCE=../
+RESSOURCE=../../ressources
 TINYCRYPT=$(RESSOURCE)/tinycrypt
+MBEDTLS=$(RESSOURCE)/mbedtls
 AMPLIB=../amp_lib
 
 AMP_LIB_OBJ := amp_utils.o \
 				amp_comms.o
-# A mettre en library static pour scaler plus facilement.
+
 TINY_CRYPT_OBJ := aes_decrypt.o \
 				aes_encrypt.o \
 				ctr_mode.o \
@@ -28,7 +29,7 @@ all: demo.elf demo.bin
 #il faut load le demo.bin
 
 #voir https://www.sifive.com/blog/all-aboard-part-1-compiler-args
-#CFLAGS += -march=rv32imac -mabi=ilp32
+CFLAGS += -march=rv32imac -mabi=ilp32 -flto
 
 vpath %.a $(PACKAGES:%=../%)
 
@@ -50,7 +51,7 @@ demo.elf: $(OBJECTS)
 # pull in dependency info for *existing* .o files
 -include $(OBJECTS:.o=.d)
 
-VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY):$(AMPLIB)/source:$(TINYCRYPT)/lib/source
+VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY):$(EXT_LIBDIR)/amp_lib/source:$(EXT_LIBDIR)/tinycrypt/lib/source
 
 main.o: main.c $(TINYCRYPT)/lib/libtinycrypt.a $(AMPLIB)/libamplib.a
 	@mkdir -p $(@D)

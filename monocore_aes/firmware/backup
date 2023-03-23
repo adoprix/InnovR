@@ -5,12 +5,11 @@ include $(SOC_DIRECTORY)/software/common.mak
 
 RESSOURCE=../../ressources
 TINYCRYPT=$(RESSOURCE)/tinycrypt
-MBEDTLS=$(RESSOURCE)/mbedtls
 AMPLIB=../amp_lib
 
 AMP_LIB_OBJ := amp_utils.o \
 				amp_comms.o
-
+# A mettre en library static pour scaler plus facilement.
 TINY_CRYPT_OBJ := aes_decrypt.o \
 				aes_encrypt.o \
 				ctr_mode.o \
