@@ -10,33 +10,58 @@ SECTIONS
 	.text :
 	{
 		_ftext = .;
+		/* Make sure crt0 files come first, and they, and the isr */
+		/* don't get disposed of by greedy optimisation */
+		*crt0*(.text)
+		KEEP(*crt0*(.text))
+		KEEP(*(.text.isr))
+
 		*(.text .stub .text.* .gnu.linkonce.t.*)
 		_etext = .;
-	} > main_ram
+	} > sram
 
 	.rodata :
 	{
-		. = ALIGN(4);
+		. = ALIGN(8);
 		_frodata = .;
 		*(.rodata .rodata.* .gnu.linkonce.r.*)
 		*(.rodata1)
+		. = ALIGN(8);
 		_erodata = .;
-	} > main_ram
+	} > sram
 
 	.data :
 	{
-		. = ALIGN(4);
+		. = ALIGN(8);
 		_fdata = .;
 		*(.data .data.* .gnu.linkonce.d.*)
 		*(.data1)
 		_gp = ALIGN(16);
 		*(.sdata .sdata.* .gnu.linkonce.s.*)
+		. = ALIGN(8);
 		_edata = .;
-	} > main_ram
+	} > main_ram AT > sram
+
+	.shared_ram :
+	{
+		. = ALIGN(8);
+		KEEP(*(shared_ram_first));
+		KEEP(*(shared_ram_second));
+		KEEP(*(shared_ram));
+		. = ALIGN(8);
+	} > sram
+
+	.private_ram :
+	{
+		. = ALIGN(8);
+		KEEP(*(priv_sp));
+		KEEP(*(priv_sp_last));
+		. = ALIGN(8);
+	} > sram
 
 	.bss :
 	{
-		. = ALIGN(4);
+		. = ALIGN(8);
 		_fbss = .;
 		*(.dynsbss)
 		*(.sbss .sbss.* .gnu.linkonce.sb.*)
@@ -44,13 +69,15 @@ SECTIONS
 		*(.dynbss)
 		*(.bss .bss.* .gnu.linkonce.b.*)
 		*(COMMON)
-		. = ALIGN(4);
+		. = ALIGN(8);
 		_ebss = .;
 		_end = .;
 	} > sram
 }
 
-PROVIDE(_fstack = ORIGIN(sram) + LENGTH(sram) - 4);
+PROVIDE(__heap_start = _end );
+PROVIDE(__heap_end = ORIGIN(sram) + LENGTH(sram));
+PROVIDE(_fstack = ORIGIN(sram) + LENGTH(sram));
 
 PROVIDE(_fdata_rom = LOADADDR(.data));
 PROVIDE(_edata_rom = LOADADDR(.data) + SIZEOF(.data));
