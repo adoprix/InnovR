@@ -22,7 +22,8 @@ OBJECTS := $(TINY_CRYPT_OBJ) \
 			$(AMP_LIB_OBJ) \
 		  	aes.o \
 		 	 main.o \
-		 	 crt0.o
+		 	 crt0.o \
+		 	 svm_model.o
 
 all: demo.elf demo.bin
 #il faut load le demo.bin
@@ -54,7 +55,7 @@ VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY):$(AMPLIB)/sour
 
 main.o: main.c $(TINYCRYPT)/lib/libtinycrypt.a $(AMPLIB)/libamplib.a
 	@mkdir -p $(@D)
-	$(compile) -I$(AMPLIB)/include -I$(TINYCRYPT)/lib/include
+	$(compile) -I$(AMPLIB)/include -I$(TINYCRYPT)/lib/include -I./
 
 crt0.o: $(CPU_DIRECTORY)/crt0.S
 	@mkdir -p $(@D)

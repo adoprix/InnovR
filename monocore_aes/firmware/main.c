@@ -10,6 +10,15 @@
 #include <libbase/console.h>
 #include <generated/csr.h>
 
+#include <amp_comms.h>
+#include <amp_utils.h>
+#include <svm_model.h>
+#include "img.h"
+
+amp_comms_tx_t _tx __attribute__ ((section ("shared_ram_first")));
+amp_comms_rx_t _rx __attribute__ ((section ("shared_ram_second")));
+float *f_img = (float *)&img;
+
 /*-----------------------------------------------------------------------*/
 /* Uart                                                                  */
 /*-----------------------------------------------------------------------*/
@@ -133,6 +142,82 @@ static void led_cmd(void)
 	}
 }
 #endif
+
+
+static void SVM() {
+    const int MEASURE_STEPS = 100;
+    double throughput_ms = 0;
+    double lat_svm_ms = 0;
+    double send_ms = 0;
+    double receive_ms = 0;
+    uint32_t time_begin, time_end;
+    uint32_t t_svm_begin, t_svm_end,  t_send_begin, t_send_end;
+    float time_spent_ms;
+    uint8_t class;
+
+    uint32_t total_time_begin, total_time_end;
+
+    printf("measuring start\n");
+    total_time_begin = amp_millis();
+
+    for (int i = 0; i < MEASURE_STEPS; i++)
+    {
+        printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
+
+        time_begin = amp_millis();
+
+        t_svm_begin = amp_millis();
+        class = predict(f_img);
+        t_svm_end = amp_millis();
+
+        t_send_begin = amp_millis();
+        amp_comms_send(&_tx, AMP_SEND_PREDICTION, &class, sizeof(class));
+        t_send_end = amp_millis();
+
+        time_end = amp_millis();
+
+        time_spent_ms = (t_svm_begin - t_svm_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
+        lat_svm_ms += time_spent_ms;
+
+        time_spent_ms = (time_begin - time_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
+        throughput_ms += time_spent_ms;
+
+        time_spent_ms = (t_send_begin - t_send_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
+        send_ms += time_spent_ms;
+    }
+
+    printf("\n");
+
+    /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
+    time_spent_ms = lat_svm_ms/MEASURE_STEPS;
+    int f_left = (int)time_spent_ms;
+    int f_right = ((float)(time_spent_ms - f_left)*1000.0);
+    printf("SVM Latency for predicted class: %d is %d.%d ms\n", class, f_left, f_right);
+
+    time_spent_ms = throughput_ms/MEASURE_STEPS;
+    f_left = (int)time_spent_ms;
+    f_right = ((float)(time_spent_ms - f_left)*1000.0);
+    printf("Throughput for predicted class: %d is %d.%d ms\n", class, f_left, f_right);
+
+    time_spent_ms = send_ms/MEASURE_STEPS;
+    f_left = (int)time_spent_ms;
+    f_right = ((float)(time_spent_ms - f_left)*1000.0);
+    printf("Total Communication send time is : %d.%d ms\n", f_left, f_right);
+
+    time_spent_ms = receive_ms/MEASURE_STEPS;
+    f_left = (int)time_spent_ms;
+    f_right = ((float)(time_spent_ms - f_left)*1000.0);
+    printf("Total Communication receive time is : %d.%d ms\n", f_left, f_right);
+
+    total_time_end = amp_millis();
+    printf("total clock ticks : %ld\n", (total_time_begin - total_time_end));
+    printf("total time : %ld ms\n", (total_time_begin - total_time_end) /(CONFIG_CLOCK_FREQUENCY / 1000));
+
+
+    prompt();
+}
+
+
 
 /*-----------------------------------------------------------------------*/
 /* Console service / Main                                                */
