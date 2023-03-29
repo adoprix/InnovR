@@ -3,6 +3,8 @@ BUILD_DIR?=../build
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
+CPUFLAGS=-march=rv32imf     -mabi=ilp32 -D__vexriscv__
+
 RESSOURCE=../
 TINYCRYPT=$(RESSOURCE)/tinycrypt
 AMPLIB=../amp_lib

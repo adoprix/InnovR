@@ -97,7 +97,7 @@ class BaseSoC(SoCCore):
             ident                    = "LiteX CPU on DE10-Lite", ident_version=True,
             integrated_rom_size      = 0x8000,
             integrated_main_ram_size = 0x10000,
-            integrated_sram_size=0x8000)
+            integrated_sram_size=0x10000)
 
         # Clock Reset Generation
         self.submodules.crg = _CRG(platform, sys_clk_freq)
