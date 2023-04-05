@@ -159,9 +159,7 @@ static void SVM_AES(void) {
 
     uint32_t t_aes_begin, t_aes_end, counter;
     double lat_aes_ms = 0;
-    amp_cmds_t cmd_rx;
-    int img_size;
-    uint8_t sel_op, class_predicted;
+    uint8_t class_predicted;
 
     printf("measuring start\n");
     total_time_begin = amp_millis();
@@ -169,30 +167,30 @@ static void SVM_AES(void) {
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
         printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
-
         time_begin = amp_millis();
-        puts("1\n");
 
         t_svm_begin = amp_millis();
-        class = predict(f_img);
+        //class = predict(f_img);
+        class = 6;
         t_svm_end = amp_millis();
-        puts("2\n");
+
 
         time_end = amp_millis();
 
         time_spent_ms = (t_svm_begin - t_svm_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
         lat_svm_ms += time_spent_ms;
-        puts("3\n");
 
         time_spent_ms = (time_begin - time_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
         throughput_ms += time_spent_ms;
     }
 
-    printf("\n");
+    printf("\nboucle finie\n");
 
     /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
     time_spent_ms = lat_svm_ms/MEASURE_STEPS;
-    f_left = (int)time_spent_ms;
+    printf("avant l'horreur \n");
+    f_left = (float )time_spent_ms; //MODIFIED remettre (int)
+    printf("après l'horreur \n");
     f_right = ((float)(time_spent_ms - f_left)*1000.0);
     printf("SVM Latency for predicted class: %d is %d.%d ms\n", class, f_left, f_right);
 

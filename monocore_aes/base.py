@@ -72,18 +72,27 @@ class Platform(AlteraPlatform):
 platform = Platform()
 
 
-class _CRG(Module):  # Clock region definition
+
+#L'erreur est ici.
+class _CRG(Module):
     def __init__(self, platform, sys_clk_freq):
         self.rst = Signal()
-        self.clock_domains.cd_sys = ClockDomain()
+        self.clock_domains.cd_sys    = ClockDomain()
+        self.clock_domains.cd_sys_ps = ClockDomain()
+        self.clock_domains.cd_vga    = ClockDomain()
 
+        # # #
+
+        # Clk / Rst
         clk50 = platform.request("clk50")
 
-        # On instancie un PLL sortant un signal d'hologe de fréquence sys_clock_freq
+        # PLL
         self.submodules.pll = pll = Max10PLL(speedgrade="-7")
         self.comb += pll.reset.eq(self.rst)
         pll.register_clkin(clk50, 50e6)
-        pll.create_clkout(self.cd_sys, sys_clk_freq)
+        pll.create_clkout(self.cd_sys,    sys_clk_freq)
+        pll.create_clkout(self.cd_sys_ps, sys_clk_freq, phase=90)
+        pll.create_clkout(self.cd_vga,    40e6)
 
 
 # Create our soc (fpga description)
@@ -93,10 +102,11 @@ class BaseSoC(SoCCore):
 
         # SoC with CPU
         SoCCore.__init__(self, platform, sys_clk_freq,
-            cpu_type                 = "vexriscv",
+            cpu_type                 = "femtorv",
+            cpu_variant	      = "petitbateau",
             ident                    = "LiteX CPU on DE10-Lite", ident_version=True,
             integrated_rom_size      = 0x8000,
-            integrated_main_ram_size = 0x10000,
+            integrated_main_ram_size = 0x10000, # pile assez pour le firmware
             integrated_sram_size=0x10000)
 
         # Clock Reset Generation
