@@ -162,48 +162,39 @@ static void SVM_AES(void) {
     uint8_t class_predicted;
 
     printf("measuring start\n");
+    printf("clock frequency : %d\n", CONFIG_CLOCK_FREQUENCY);
     total_time_begin = amp_millis();
 
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
-        printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
-        time_begin = amp_millis();
+       /* int truc;
+        timer0_update_value_write(1);
+        truc = timer0_value_read();*/
+        printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS); // REMOVE lors des tests pour pas de calcul inutile
 
         t_svm_begin = amp_millis();
-        //class = predict(f_img);
-        class = 6;
+        class = predict(f_img);
+
         t_svm_end = amp_millis();
 
-
-        time_end = amp_millis();
-
         time_spent_ms = (t_svm_begin - t_svm_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-        lat_svm_ms += time_spent_ms;
-
-        time_spent_ms = (time_begin - time_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
         throughput_ms += time_spent_ms;
-    }
 
-    printf("\nboucle finie\n");
+        //time_spent_ms = (time_begin - time_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
+        //throughput_ms += time_spent_ms;
+    }
+    total_time_end = amp_millis();
+    printf("\n");
 
     /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
-    time_spent_ms = lat_svm_ms/MEASURE_STEPS;
-    printf("avant l'horreur \n");
-    f_left = (float )time_spent_ms; //MODIFIED remettre (int)
-    printf("après l'horreur \n");
-    f_right = ((float)(time_spent_ms - f_left)*1000.0);
-    printf("SVM Latency for predicted class: %d is %d.%d ms\n", class, f_left, f_right);
-
     time_spent_ms = throughput_ms/MEASURE_STEPS;
     f_left = (int)time_spent_ms;
-    f_right = ((float)(time_spent_ms - f_left)*1000.0);
-    printf("Throughput for predicted class: %d is %d.%d ms\n", class, f_left, f_right);
+    f_right = (int) ((time_spent_ms - f_left) * 1000.0);
+    printf("Throughput for predicted class %d is : %d.%d ms\n", class, f_left, f_right);
 
-    total_time_end = amp_millis();
+
     printf("total clock ticks : %ld\n", (total_time_begin - total_time_end));
     printf("total time : %ld ms\n", (total_time_begin - total_time_end) /(CONFIG_CLOCK_FREQUENCY / 1000));
-
-    prompt();
 
 
     /****** PARTIE AES ******/
@@ -231,7 +222,6 @@ static void SVM_AES(void) {
     printf("\nAES Latency for predicted class: %d is %d.%d ms\n", class_predicted, f_left, f_right);
 
     lat_aes_ms = 0;
-    prompt();
 
 }
 
@@ -269,6 +259,7 @@ int main(void)
 	irq_setie(1);
 #endif
     uart_init();
+    amp_millis_init();
 
     help();
     prompt();

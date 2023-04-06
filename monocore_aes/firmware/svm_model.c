@@ -11,10 +11,8 @@ int predict (float features[]) {
     int class_idx = -1;
     int i, il, j, jl;
     for (i = 0, il = sizeof(coefficients) / sizeof (coefficients[0]); i < il; i++) {
-        printf("i : %d\n", i);
         double prob = 0.;
         for (j = 0, jl = sizeof(coefficients[0]) / sizeof (coefficients[0][0]); j < jl; j++) {
-            //printf("coef : %d , feature : %lf\n", (float) coefficients[i][j], features[j]);
             prob += coefficients[i][j] * features[j];
         }
         if (prob + intercepts[i] > class_val) {
