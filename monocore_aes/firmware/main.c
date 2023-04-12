@@ -199,6 +199,7 @@ static void SVM_AES(void) {
 
     /****** PARTIE AES ******/
 
+    amp_aes_init(&priv_data);
     t_aes_begin = amp_millis();
 
     int result = 0;
