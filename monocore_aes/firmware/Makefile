@@ -7,7 +7,7 @@ include $(SOC_DIRECTORY)/software/common.mak
 CPUFLAGS+=-flto
 RESSOURCES=../../
 TINYCRYPT=$(RESSOURCE)/tinycrypt
-AMPLIB=$(RESSOURCES)/amp_lib
+AMPLIB=../amp_lib
 
 AMP_LIB_OBJ := amp_utils.o \
 				amp_comms.o
