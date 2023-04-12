@@ -11,3 +11,9 @@ pour enregistrer les mesures du smartpower :
 minicom -s : configurer le port série (ttyUSBx)
 minicom : lance la liaison
 ctr-A puis Z : permet de choisir le lancement de l'enregistrement dans un fichier
+
+
+Pour utiliser la Gapuino : 
+faire GAP_SDK et choisir la GAPUINO_V3
+aller dans le dossier contenant le makefile du projet et faire make clean all pour envoyer le programme dans la carte, make run pour le lancer
+ATTENTION les clean de gap supriment aussi les librairies et includes rajoutés à la main ! J'ai commenté la ligne qui fait ça pulp_rules.mk (à la toute fin, def du clean) mais je ne suis pas absolument sûr que ça résolve tout/ne pose pas problème

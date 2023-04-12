@@ -1,5 +1,5 @@
 
-/home/jamorin/InnovR/GAPuino/test1/BUILD/GAP8_V3/GCC_RISCV_PULPOS/test:     file format elf32-littleriscv
+/home/jamorin/InnovR/GAPuino/test1/BUILD/GAP8_V3/GCC_RISCV_PULPOS/helloworld:     file format elf32-littleriscv
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
@@ -166,7 +166,7 @@ SYMBOL TABLE:
 1c0005f0 l       .text	00000000 __rt_hyper_repeat_copy_not_last3
 00000000 l    df *ABS*	00000000 libgcc2.c
 00000000 l    df *ABS*	00000000 libgcc2.c
-00000000 l    df *ABS*	00000000 test1.c
+00000000 l    df *ABS*	00000000 helloworld.c
 1c000c9a l     F .text	00000052 pi_cluster_task
 1c000cec l     F .text	0000001e core_id
 1c000d0a l     F .text	00000020 cluster_id

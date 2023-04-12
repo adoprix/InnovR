@@ -1,8 +1,8 @@
 # User Test
 #------------------------------------
-APP              = test
+APP              = helloworld
 # App sources
-APP_SRCS         = test1.c
+APP_SRCS         = helloworld.c
 # App includes
 APP_INC	         =
 # Compiler flags
