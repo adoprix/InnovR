@@ -15,9 +15,8 @@ void cluster_helloworld(void *arg)
     int result = 0;
     amp_aes_init(&priv_data);
     result = amp_aes_update_nonce(&priv_data);
-    result = amp_aes_encrypts(&class, &priv_data);
-    printf("[%d %d] class : %d\n", cluster_id, core_id, class);
-    printf("result : \n%d \n", result);
+    result = amp_aes_encrypts(&class, &priv_data); // le résultat est stocké dans priv_data
+    printf("[%d %d] class : %d\n", cluster_id, core_id, class); 
     
     
 }
