@@ -5,27 +5,28 @@ include $(SOC_DIRECTORY)/software/common.mak
 
 #CPUFLAGS=-march=rv32imac -mabi=ilp32
 CPUFLAGS+=-flto
-RESSOURCES=../../
-TINYCRYPT=$(RESSOURCE)/tinycrypt
-AMPLIB=../amp_lib
+RESSOURCES=../../ressources
+TINYCRYPT=$(RESSOURCES)/tinycrypt
+AMPLIB=$(RESSOURCES)/amp_lib
 
 AMP_LIB_OBJ := amp_utils.o \
-				amp_comms.o
+			amp_comms.o
+			
 # A mettre en library static pour scaler plus facilement.
 TINY_CRYPT_OBJ := aes_decrypt.o \
-				aes_encrypt.o \
-				ctr_mode.o \
-				ctr_prng.o \
-				ccm_mode.o \
-				cmac_mode.o \
-				utils.o
+			aes_encrypt.o \
+			ctr_mode.o \
+			ctr_prng.o \
+			ccm_mode.o \
+			cmac_mode.o \
+			utils.o
 
-OBJECTS := $(TINY_CRYPT_OBJ) \
-			$(AMP_LIB_OBJ) \
-		  	aes.o \
-		 	 main.o \
-		 	 crt0.o \
-		 	 svm_model.o
+OBJECTS := $(AMP_LIB_OBJ) \
+		$(TINY_CRYPT_OBJ) \
+		 aes.o \
+		 main.o \
+		 crt0.o \
+		 svm_model.o
 
 all: demo.elf demo.bin
 #il faut load le demo.bin
