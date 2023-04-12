@@ -5,7 +5,7 @@ include $(SOC_DIRECTORY)/software/common.mak
 
 #CPUFLAGS=-march=rv32imac -mabi=ilp32
 CPUFLAGS+=-flto
-RESSOURCE=../
+                        =../
 TINYCRYPT=$(RESSOURCE)/tinycrypt
 AMPLIB=../amp_lib
 
