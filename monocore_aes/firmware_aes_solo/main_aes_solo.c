@@ -101,7 +101,7 @@ static void help(void)
 #ifdef WITH_CXX
     puts("hellocpp           - Hello C++");
 #endif
-    puts("svm_aes            - SVM and AES on result");
+    puts("aes                - AES on the image");
 }
 
 /*-----------------------------------------------------------------------*/
@@ -148,63 +148,27 @@ static void led_cmd(void)
 
 static void SVM_AES(void) {
     const int MEASURE_STEPS = 100;
-    double throughput_ms = 0;
-    double lat_svm_ms = 0;
-    uint32_t time_begin, time_end;
-    uint32_t t_svm_begin, t_svm_end;
     float time_spent_ms;
-    uint8_t class;
-    uint32_t total_time_begin, total_time_end;
     int f_right, f_left;
 
     uint32_t t_aes_begin, t_aes_end, counter;
     double lat_aes_ms = 0;
-    uint8_t class_predicted;
+    uint8_t* chiffrage;
 
     printf("measuring start\n");
     printf("clock frequency : %d\n", CONFIG_CLOCK_FREQUENCY);
-    total_time_begin = amp_millis();
-
-    for (int i = 0; i < MEASURE_STEPS; i++)
-    {
-       /* int truc;
-        timer0_update_value_write(1);
-        truc = timer0_value_read();*/
-        printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS); // REMOVE lors des tests pour pas de calcul inutile
-
-        t_svm_begin = amp_millis();
-        class = predict(f_img);
-
-        t_svm_end = amp_millis();
-
-        time_spent_ms = (t_svm_begin - t_svm_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-        throughput_ms += time_spent_ms;
-
-        //time_spent_ms = (time_begin - time_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-        //throughput_ms += time_spent_ms;
-    }
-    total_time_end = amp_millis();
-    printf("\n");
-
-    /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
-    time_spent_ms = throughput_ms/MEASURE_STEPS;
-    f_left = (int)time_spent_ms;
-    f_right = (int) ((time_spent_ms - f_left) * 1000.0);
-    printf("Throughput for predicted class %d is : %d.%d ms\n", class, f_left, f_right);
-
-
-    printf("total clock ticks : %ld\n", (total_time_begin - total_time_end));
-    printf("total time : %ld ms\n", (total_time_begin - total_time_end) /(CONFIG_CLOCK_FREQUENCY / 1000));
-
 
     /****** PARTIE AES ******/
-
+    printf("taille image : %d  ;  taille image_float : %d \n", sizeof(img), sizeof(f_img));
     amp_aes_init(&priv_data);
     t_aes_begin = amp_millis();
 
+    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
+    if(chiffrage == NULL)
+        return;
     int result = 0;
     result = amp_aes_update_nonce(&priv_data);
-    result = amp_aes_encrypts(&class_predicted, &priv_data);
+    result = amp_aes_encrypts(f_img, chiffrage, sizeof(img), &priv_data);
 
     t_aes_end = amp_millis();
     time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
@@ -220,7 +184,7 @@ static void SVM_AES(void) {
     time_spent_ms = lat_aes_ms/MEASURE_STEPS;
     f_left = (int)time_spent_ms;
     f_right = ((float)(time_spent_ms - f_left)*1000.0);
-    printf("\nAES Latency for predicted class: %d is %d.%d ms\n", class_predicted, f_left, f_right);
+    printf("time spent on aes : %d.%d ms\n", f_left, f_right);
 
     lat_aes_ms = 0;
 
@@ -244,7 +208,7 @@ static void console_service(void)
         help();
     else if(strcmp(token, "reboot") == 0)
         reboot_cmd();
-    else if(strcmp(token, "svm_aes") == 0)
+    else if(strcmp(token, "aes") == 0)
         SVM_AES();
 #ifdef CSR_LEDS_BASE
     else if(strcmp(token, "led") == 0)

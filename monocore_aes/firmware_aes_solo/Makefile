@@ -15,6 +15,7 @@ AMP_LIB_OBJ := amp_utils.o \
 # A mettre en library static pour scaler plus facilement.
 TINY_CRYPT_OBJ := aes_decrypt.o \
 			aes_encrypt.o \
+			cbc_mode.o \
 			ctr_mode.o \
 			ctr_prng.o \
 			ccm_mode.o \
@@ -24,11 +25,11 @@ TINY_CRYPT_OBJ := aes_decrypt.o \
 OBJECTS := $(AMP_LIB_OBJ) \
 		$(TINY_CRYPT_OBJ) \
 		 aes.o \
-		 main.o \
+		 main_aes_solo.o \
 		 crt0.o \
 		 svm_model.o
 
-all: demo.elf demo.bin
+all: main_aes_solo.elf main_aes_solo.bin
 #il faut load le demo.bin
 
 #voir https://www.sifive.com/blog/all-aboard-part-1-compiler-args
@@ -40,7 +41,7 @@ vpath %.a $(PACKAGES:%=../%)
 	$(OBJCOPY) -O binary $< $@
 	chmod -x $@
 
-demo.elf: $(OBJECTS)
+main_aes_solo.elf: $(OBJECTS)
 	$(CC) -Os $(LDFLAGS) -Wl,-Map=output.map -Wl,--print-memory-usage -T linker.ld -N -o $@ \
 		$(OBJECTS) \
 		$(PACKAGES:%=-L$(BUILD_DIR)/software/%) \
@@ -56,7 +57,7 @@ demo.elf: $(OBJECTS)
 
 VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY):$(AMPLIB)/source:$(TINYCRYPT)/lib/source
 
-main.o: main.c $(TINYCRYPT)/lib/libtinycrypt.a $(AMPLIB)/libamplib.a
+main_aes_solo.o: main_aes_solo.c $(TINYCRYPT)/lib/libtinycrypt.a $(AMPLIB)/libamplib.a
 	@mkdir -p $(@D)
 	$(compile) -I$(AMPLIB)/include -I$(TINYCRYPT)/lib/include -I./
 
@@ -87,6 +88,10 @@ $(TINYCRYPT)/lib/libtinycrypt.a: $(TINY_CRYPT_OBJ)
 %.o: %.S
 	@mkdir -p $(@D)
 	$(assemble)
+
+run:
+	make clean all
+	litex_term /dev/ttyUSB0 --kernel main_aes_solo.bin
 
 clean:
 	$(RM) $(OBJECTS) *.elf *.bin .*~ *~ *.d
