@@ -147,7 +147,7 @@ static void led_cmd(void)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 500;
+    const int MEASURE_STEPS = 100;
     double throughput_ms = 0;
     double lat_svm_ms = 0;
     uint32_t time_begin, time_end;
