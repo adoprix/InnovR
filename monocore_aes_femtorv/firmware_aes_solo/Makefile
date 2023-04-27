@@ -13,8 +13,12 @@ MBEDTLS=$(RESSOURCES)/mbedtls
 AMP_LIB_OBJ := amp_utils.o \
 			amp_comms.o
 
-MBEDTLS_OBJ := gcm.o \
-		cipher.o
+MBEDTLS_OBJ := aes.o \
+		ccm.o \
+		cipher.o \
+		cipher_wrap.o \
+		gcm.o \
+
 			
 # A mettre en library static pour scaler plus facilement.
 TINY_CRYPT_OBJ := aes_decrypt.o \

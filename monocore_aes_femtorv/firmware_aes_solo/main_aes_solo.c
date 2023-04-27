@@ -195,32 +195,29 @@ static void SVM_AES(void) {
     printf("clock frequency : %d\n", CONFIG_CLOCK_FREQUENCY);
 
     /****** PARTIE AES ******/
-    printf("taille image : %d  ;  taille image_float : %d \n", sizeof(img), sizeof(f_img));
     t_aes_begin = amp_millis();
-
-    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
-    if(chiffrage == NULL)
-        return;
-    int result = 0;
     
-    nonce = (uint8_t*) malloc(taille_image);
-    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
-	if (result != 1) {
-		printf("\e[91;1mError in the Nonce generation\e[0m\n");
-	}
-	encrypts(nonce, taille_image);
-    
+    for(int i=0 ; i<MEASURE_STEPS ; i++) 
+    {
+	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
+	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
+	    if(chiffrage == NULL)
+		return;
+	    int result = 0;
+	    
+	    nonce = (uint8_t*) malloc(taille_image);
+	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
+		if (result != 1) {
+			printf("\e[91;1mError in the Nonce generation\e[0m\n");
+		}
+	    encrypts(nonce, taille_image);
+    }
 
     t_aes_end = amp_millis();
     time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
     lat_aes_ms += time_spent_ms;
 
     counter++;
-
-    if (result != 0)
-    {
-        printf("\e[91;1m\nError in the encryption. Err= %d\e[0m\n", result);
-    }
 
     time_spent_ms = lat_aes_ms/MEASURE_STEPS;
     f_left = (int)time_spent_ms;
