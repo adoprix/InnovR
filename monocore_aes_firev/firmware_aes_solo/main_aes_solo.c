@@ -10,15 +10,19 @@
 #include <libbase/console.h>
 #include <generated/csr.h>
 
-#include <amp_comms.h>
-#include <amp_utils.h>
-#include <svm_model.h>
+#include <mbedtls/gcm.h>
+#include <mbedtls/cipher.h>
+#include <tinycrypt/ctr_prng.h>
 #include "img.h"
 
-amp_comms_tx_t _tx;
-amp_comms_rx_t _rx;
+#define MAC_LEN 	 16
+#define KEY_SIZE_BITS   128
+#define KEY_SIZE_BYTES  16
+
 float *f_img = (float *)&img;
-private_aes_data_t priv_data;
+uint8_t* nonce;
+uint32_t taille_image;
+TCCtrPrng_t ctx;
 
 /*-----------------------------------------------------------------------*/
 /* Uart                                                                  */
@@ -101,7 +105,7 @@ static void help(void)
 #ifdef WITH_CXX
     puts("hellocpp           - Hello C++");
 #endif
-    puts("svm_aes            - SVM and AES on result");
+    puts("aes                - AES on the image");
 }
 
 /*-----------------------------------------------------------------------*/
@@ -145,79 +149,82 @@ static void led_cmd(void)
 }
 #endif
 
+/**
+ * @brief Encryption top function
+ * 
+ * @param counter 		The pointer for the counter
+ * @param len_counter 	The size of the counter
+ */
+static void encrypts(uint8_t *nonce, size_t nlen)
+{	
+
+	uint8_t nist_key[KEY_SIZE_BYTES];
+	uint8_t tag[MAC_LEN];
+
+	/* Setting encryption configs */
+	uint8_t* res = malloc(taille_image);
+
+	mbedtls_gcm_context ctx;
+
+	mbedtls_gcm_init(&ctx);
+
+	int result = mbedtls_gcm_setkey(&ctx, MBEDTLS_CIPHER_ID_AES, nist_key, KEY_SIZE_BITS);
+	if (result == MBEDTLS_ERR_GCM_BAD_INPUT){
+		printf("\e[91;1mError setting the encryption key\e[0m\n");
+	}
+	
+	/* Encryption phase */
+	result = mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_ENCRYPT, taille_image, nonce, nlen, NULL, 0, (uint8_t *) f_img, res, MAC_LEN, &tag[0]);
+	if (result == MBEDTLS_ERR_GCM_BAD_INPUT) {
+			printf("\e[91;1mError in the text encryption\e[0m\n");
+	}
+
+}
+
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 100;
-    double throughput_ms = 0;
-    double lat_svm_ms = 0;
-    uint32_t time_begin, time_end;
-    uint32_t t_svm_begin, t_svm_end;
+    const int MEASURE_STEPS = 10;
     float time_spent_ms;
-    uint8_t class;
-    uint32_t total_time_begin, total_time_end;
     int f_right, f_left;
 
-    uint32_t t_aes_begin, t_aes_end, counter;
-    double lat_aes_ms = 0;
-    uint8_t class_predicted;
+    uint32_t t_aes_begin, t_aes_end;
+    uint8_t* chiffrage;
+    int result = 0;
 
     printf("measuring start\n");
-    printf("clock frequency : %d\n", CONFIG_CLOCK_FREQUENCY);
-    total_time_begin = amp_millis();
+    printf("clock frequency : %d MHz\n", (int) CONFIG_CLOCK_FREQUENCY/1000000);
 
-    for (int i = 0; i < MEASURE_STEPS; i++)
-    {
-        printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS); // REMOVE lors des tests pour pas de calcul inutile
-
-        t_svm_begin = amp_millis();
-        class = predict(f_img);
-
-        t_svm_end = amp_millis();
-
-        time_spent_ms = (t_svm_begin - t_svm_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-        throughput_ms += time_spent_ms;
-    }
-    total_time_end = amp_millis();
-    printf("\n");
-
-    /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
-    time_spent_ms = throughput_ms/MEASURE_STEPS;
-    f_left = (int)time_spent_ms;
-    f_right = (int) ((time_spent_ms - f_left) * 1000.0);
-    printf("Throughput for predicted class %d is : %d.%d ms\n", class, f_left, f_right);
-
-
-    printf("total clock ticks : %ld\n", (total_time_begin - total_time_end));
-    printf("total time : %ld ms\n", (total_time_begin - total_time_end) /(CONFIG_CLOCK_FREQUENCY / 1000));
-
-
-    /********** PARTIE AES **********/
-
-    amp_aes_init(&priv_data);
+    /****** PARTIE AES ******/
     t_aes_begin = amp_millis();
-
-    int result = 0;
-    result = amp_aes_update_nonce(&priv_data);
-    result = amp_aes_encrypts(&class_predicted, &priv_data);
+    
+    for(int i=0 ; i<MEASURE_STEPS ; i++) 
+    {
+	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
+	    free(chiffrage); // oh la belle fuite mémoire 
+	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
+	    if(chiffrage == NULL)
+		return;
+	    
+	    free(nonce); // vu qu'on fait des boucles
+	    nonce = (uint8_t*) malloc(taille_image);
+	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
+		if (result != 1) {
+			printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
+		}
+	    encrypts(nonce, taille_image);
+    }
 
     t_aes_end = amp_millis();
-    time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-    lat_aes_ms += time_spent_ms;
-
-    counter++;
-
-    if (result != 0)
-    {
-        printf("\e[91;1m\nError in the encryption. Err= %d\e[0m\n", result);
-    }
-
-    time_spent_ms = lat_aes_ms/MEASURE_STEPS;
-    f_left = (int)time_spent_ms;
-    f_right = ((float)(time_spent_ms - f_left)*1000.0);
-    printf("\nAES Latency for predicted class: %d is %d.%d ms\n", class_predicted, f_left, f_right);
-    printf("Encryption : %d\n", priv_data.ciphertext[0]);
-
-    lat_aes_ms = 0;
+    
+    time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000); // on dirait que l'horloge décompte !
+    f_left = (int) time_spent_ms;
+    f_right = (int) (time_spent_ms - f_left)*1000.0;
+    printf("total time spent : %d.%d ms\n", f_left, f_right);
+    
+    time_spent_ms = time_spent_ms/(MEASURE_STEPS);
+    f_left = (int) time_spent_ms;
+    f_right = (int) (time_spent_ms - f_left)*1000.0;
+    printf("average time spent on aes : %d.%d ms\n", f_left, f_right);
 
 }
 
@@ -239,11 +246,11 @@ static void console_service(void)
         help();
     else if(strcmp(token, "reboot") == 0)
         reboot_cmd();
-    else if(strcmp(token, "svm_aes") == 0)
+    else if(strcmp(token, "aes") == 0)
         SVM_AES();
 #ifdef CSR_LEDS_BASE
     else if(strcmp(token, "led") == 0)
-		led_cmd();
+	led_cmd();
 #endif
     prompt();
 }
@@ -259,6 +266,17 @@ int main(void)
 
     help();
     prompt();
+    
+    /* Generating nonce */
+
+	int result = 1;
+	taille_image = sizeof(img) * sizeof(float);
+	uint8_t entropy[256] = {0x7f, 0x40, 0x80, 0x46, 0x93, 0x55, 0x2e, 0x31, 0x75, 0x23, 0xfd, 0xa6, 0x93, 0x5a, 0x5b, 0xc8, 0x14, 0x35, 0x3b, 0x1f, 0xbb, 0x7d, 0x33, 0x49, 0x64, 0xac, 0x4d, 0x1d, 0x12, 0xdd, 0xcc, 0xce};
+
+	result = tc_ctr_prng_init(&ctx, &entropy[0], sizeof(entropy), NULL, 0);
+	if (result != 1) {
+		printf("\e[91;1mError in the PRNG init\e[0m\n");
+	}
 
     while(1) {
         console_service();

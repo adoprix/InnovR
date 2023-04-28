@@ -97,14 +97,6 @@ static void help(void)
     puts("Available commands:");
     puts("help               - Show this command");
     puts("reboot             - Reboot CPU");
-#ifdef CSR_LEDS_BASE
-    puts("led                - Led demo");
-#endif
-    puts("donut              - Spinning Donut demo");
-    puts("helloc             - Hello C");
-#ifdef WITH_CXX
-    puts("hellocpp           - Hello C++");
-#endif
     puts("aes                - AES on the image");
 }
 
@@ -117,37 +109,6 @@ static void reboot_cmd(void)
     ctrl_reset_write(1);
 }
 
-#ifdef CSR_LEDS_BASE
-static void led_cmd(void)
-{
-	int i;
-	printf("Led demo...\n");
-
-	printf("Counter mode...\n");
-	for(i=0; i<32; i++) {
-		leds_out_write(i);
-		busy_wait(100);
-	}
-
-	printf("Shift mode...\n");
-	for(i=0; i<4; i++) {
-		leds_out_write(1<<i);
-		busy_wait(200);
-	}
-	for(i=0; i<4; i++) {
-		leds_out_write(1<<(3-i));
-		busy_wait(200);
-	}
-
-	printf("Dance mode...\n");
-	for(i=0; i<4; i++) {
-		leds_out_write(0x55);
-		busy_wait(200);
-		leds_out_write(0xaa);
-		busy_wait(200);
-	}
-}
-#endif
 
 /**
  * @brief Encryption top function
@@ -187,9 +148,9 @@ static void SVM_AES(void) {
     float time_spent_ms;
     int f_right, f_left;
 
-    uint32_t t_aes_begin, t_aes_end, counter;
-    double lat_aes_ms = 0;
+    uint32_t t_aes_begin, t_aes_end;
     uint8_t* chiffrage;
+    int result = 0;
 
     printf("measuring start\n");
     printf("clock frequency : %d MHz\n", (int) CONFIG_CLOCK_FREQUENCY/1000000);
@@ -204,34 +165,28 @@ static void SVM_AES(void) {
 	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
 	    if(chiffrage == NULL)
 		return;
-	    int result = 0;
 	    
 	    free(nonce); // vu qu'on fait des boucles
 	    nonce = (uint8_t*) malloc(taille_image);
 	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
-		if (result != 1) {
-			printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
-			/*
-			printf("&ctx : %p\n", &ctx);
-			printf("&nonce : %p\n", &nonce);
-			printf("taillle_image : %d\n", taille_image);
-			*/
-		}
+	    if (result != 1) {
+	    	printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
+	    }
 	    encrypts(nonce, taille_image);
     }
 
     t_aes_end = amp_millis();
-    time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-    lat_aes_ms += time_spent_ms;
-
-    counter++;
-
-    time_spent_ms = lat_aes_ms/MEASURE_STEPS;
-    f_left = (int)time_spent_ms;
-    f_right = ((float)(time_spent_ms - f_left)*1000.0);
-    printf("time spent on aes : %d.%d ms\n", f_left, f_right);
-
-    lat_aes_ms = 0;
+    printf("\n");
+    
+    time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000); // on dirait que l'horloge décompte !
+    f_left = (int) time_spent_ms;
+    f_right = (int) (time_spent_ms - f_left)*1000.0;
+    printf("total time spent : %d.%d ms\n", f_left, f_right);
+    
+    time_spent_ms = time_spent_ms/(MEASURE_STEPS);
+    f_left = (int) time_spent_ms;
+    f_right = (int) (time_spent_ms - f_left)*1000.0;
+    printf("average time spent on aes : %d.%d ms\n", f_left, f_right);
 
 }
 
@@ -255,10 +210,6 @@ static void console_service(void)
         reboot_cmd();
     else if(strcmp(token, "aes") == 0)
         SVM_AES();
-#ifdef CSR_LEDS_BASE
-    else if(strcmp(token, "led") == 0)
-	led_cmd();
-#endif
     prompt();
 }
 
