@@ -183,7 +183,7 @@ static void encrypts(uint8_t *nonce, size_t nlen)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 100;
+    const int MEASURE_STEPS = 10;
     float time_spent_ms;
     int f_right, f_left;
 
@@ -192,7 +192,7 @@ static void SVM_AES(void) {
     uint8_t* chiffrage;
 
     printf("measuring start\n");
-    printf("clock frequency : %d\n", CONFIG_CLOCK_FREQUENCY);
+    printf("clock frequency : %d MHz\n", (int) CONFIG_CLOCK_FREQUENCY/1000000);
 
     /****** PARTIE AES ******/
     t_aes_begin = amp_millis();
@@ -200,15 +200,22 @@ static void SVM_AES(void) {
     for(int i=0 ; i<MEASURE_STEPS ; i++) 
     {
 	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
+	    free(chiffrage); // oh la belle fuite mémoire 
 	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
 	    if(chiffrage == NULL)
 		return;
 	    int result = 0;
 	    
+	    free(nonce); // vu qu'on fait des boucles
 	    nonce = (uint8_t*) malloc(taille_image);
 	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
 		if (result != 1) {
-			printf("\e[91;1mError in the Nonce generation\e[0m\n");
+			printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
+			/*
+			printf("&ctx : %p\n", &ctx);
+			printf("&nonce : %p\n", &nonce);
+			printf("taillle_image : %d\n", taille_image);
+			*/
 		}
 	    encrypts(nonce, taille_image);
     }
