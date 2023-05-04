@@ -1,1 +1,1 @@
-crt0.o: /home/jamorin/litex_root/litex/litex/soc/cores/cpu/femtorv/crt0.S
+crt0.o: /home/jamorin/litex_root/litex/litex/soc/cores/cpu/firev/crt0.S

@@ -110,12 +110,7 @@ static void reboot_cmd(void)
 }
 
 
-/**
- * @brief Encryption top function
- * 
- * @param counter 		The pointer for the counter
- * @param len_counter 	The size of the counter
- */
+
 static void encrypts(uint8_t *nonce, size_t nlen)
 {	
 
@@ -125,17 +120,17 @@ static void encrypts(uint8_t *nonce, size_t nlen)
 	/* Setting encryption configs */
 	uint8_t* res = malloc(taille_image);
 
-	mbedtls_gcm_context ctx;
+	mbedtls_gcm_context ctx_encrypt;
 
-	mbedtls_gcm_init(&ctx);
+	mbedtls_gcm_init(&ctx_encrypt);
 
-	int result = mbedtls_gcm_setkey(&ctx, MBEDTLS_CIPHER_ID_AES, nist_key, KEY_SIZE_BITS);
+	int result = mbedtls_gcm_setkey(&ctx_encrypt, MBEDTLS_CIPHER_ID_AES, nist_key, KEY_SIZE_BITS);
 	if (result == MBEDTLS_ERR_GCM_BAD_INPUT){
 		printf("\e[91;1mError setting the encryption key\e[0m\n");
 	}
 	
 	/* Encryption phase */
-	result = mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_ENCRYPT, taille_image, nonce, nlen, NULL, 0, (uint8_t *) f_img, res, MAC_LEN, &tag[0]);
+	result = mbedtls_gcm_crypt_and_tag(&ctx_encrypt, MBEDTLS_GCM_ENCRYPT, taille_image, nonce, nlen, NULL, 0, (uint8_t *) f_img, res, MAC_LEN, &tag[0]);
 	if (result == MBEDTLS_ERR_GCM_BAD_INPUT) {
 			printf("\e[91;1mError in the text encryption\e[0m\n");
 	}
@@ -161,18 +156,23 @@ static void SVM_AES(void) {
     for(int i=0 ; i<MEASURE_STEPS ; i++) 
     {
 	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
-	    free(chiffrage); // oh la belle fuite mémoire 
-	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
-	    if(chiffrage == NULL)
-		return;
 	    
-	    free(nonce); // vu qu'on fait des boucles
+	    //chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
+	    
+	    
 	    nonce = (uint8_t*) malloc(taille_image);
+	    if(nonce == NULL) {
+	        printf("erreur de malloc\n");
+		return;
+	    }
 	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
 	    if (result != 1) {
 	    	printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
 	    }
 	    encrypts(nonce, taille_image);
+	    
+	    //free(chiffrage); // oh la belle fuite mémoire 
+	    free(nonce); // vu qu'on fait des boucles
     }
 
     t_aes_end = amp_millis();

@@ -147,18 +147,12 @@ static void led_cmd(void)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 100;
-    double throughput_ms = 0;
-    double lat_svm_ms = 0;
-    uint32_t time_begin, time_end;
-    uint32_t t_svm_begin, t_svm_end;
-    float time_spent_ms;
-    uint8_t class;
-    uint32_t total_time_begin, total_time_end;
+    const int MEASURE_STEPS = 10;
+    uint32_t result = 0;
+    float time_spent_ms, average_time;
+    uint32_t total_time_begin, total_time_end, total_ticks;
     int f_right, f_left;
 
-    uint32_t t_aes_begin, t_aes_end, counter;
-    double lat_aes_ms = 0;
     uint8_t class_predicted;
 
     printf("measuring start\n");
@@ -169,55 +163,34 @@ static void SVM_AES(void) {
     {
         printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS); // REMOVE lors des tests pour pas de calcul inutile
 
-        t_svm_begin = amp_millis();
-        class = predict(f_img);
+        class_predicted = predict(f_img);
+        
+        amp_aes_init(&priv_data);
+    	result = amp_aes_update_nonce(&priv_data);
+    	result = amp_aes_encrypts(&class_predicted, &priv_data);
+    	if (result != 0)
+    	{
+        	printf("\e[91;1m\nError in the encryption. Err= %d\e[0m\n", result);
+    	}
 
-        t_svm_end = amp_millis();
-
-        time_spent_ms = (t_svm_begin - t_svm_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-        throughput_ms += time_spent_ms;
     }
     total_time_end = amp_millis();
     printf("\n");
 
     /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
-    time_spent_ms = throughput_ms/MEASURE_STEPS;
+    total_ticks = (total_time_begin - total_time_end);
+    time_spent_ms = (total_ticks) / (CONFIG_CLOCK_FREQUENCY / 1000.0);
+    average_time = time_spent_ms / MEASURE_STEPS;
+    
+    f_left = (int)average_time;
+    f_right = (int) ((average_time - f_left) * 1000.0);
+    printf("Throughput for SVM+AES class %d is : %d.%d ms\n", class_predicted, f_left, f_right);
+
+
     f_left = (int)time_spent_ms;
     f_right = (int) ((time_spent_ms - f_left) * 1000.0);
-    printf("Throughput for predicted class %d is : %d.%d ms\n", class, f_left, f_right);
-
-
-    printf("total clock ticks : %ld\n", (total_time_begin - total_time_end));
-    printf("total time : %ld ms\n", (total_time_begin - total_time_end) /(CONFIG_CLOCK_FREQUENCY / 1000));
-
-
-    /********** PARTIE AES **********/
-
-    amp_aes_init(&priv_data);
-    t_aes_begin = amp_millis();
-
-    int result = 0;
-    result = amp_aes_update_nonce(&priv_data);
-    result = amp_aes_encrypts(&class_predicted, &priv_data);
-
-    t_aes_end = amp_millis();
-    time_spent_ms = (t_aes_begin - t_aes_end)/(CONFIG_CLOCK_FREQUENCY/1000.0);
-    lat_aes_ms += time_spent_ms;
-
-    counter++;
-
-    if (result != 0)
-    {
-        printf("\e[91;1m\nError in the encryption. Err= %d\e[0m\n", result);
-    }
-
-    time_spent_ms = lat_aes_ms/MEASURE_STEPS;
-    f_left = (int)time_spent_ms;
-    f_right = ((float)(time_spent_ms - f_left)*1000.0);
-    printf("\nAES Latency for predicted class: %d is %d.%d ms\n", class_predicted, f_left, f_right);
-    printf("Encryption : %d\n", priv_data.ciphertext[0]);
-
-    lat_aes_ms = 0;
+    printf("total clock ticks : %ld\n", total_ticks);
+    printf("total time : %d.%d ms\n", f_left, f_right );
 
 }
 

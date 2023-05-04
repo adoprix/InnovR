@@ -108,7 +108,7 @@ static void reboot_cmd(void)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 100;
+    const int MEASURE_STEPS = 10;
     uint32_t time_begin, time_end;
     float total_time_spent, average_time_spent_ms, nb_clock_cycles;
     uint8_t class;
@@ -123,7 +123,7 @@ static void SVM_AES(void) {
 
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
-        printf("Measuring step : %d/%d   ;   class : %d   ;   result : %d\r",i+1, MEASURE_STEPS, class, result); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
+        printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
 
 	/******* PARTIE SVM ********/
        
@@ -133,8 +133,6 @@ static void SVM_AES(void) {
         /********** PARTIE AES **********/
 
     	amp_aes_init(&priv_data);
-    	time_begin = amp_millis();
-
     	result = amp_aes_update_nonce(&priv_data);
     	result = amp_aes_encrypts(&class, &priv_data);
     	if (result != 0)
@@ -148,7 +146,6 @@ static void SVM_AES(void) {
 
     /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
     nb_clock_cycles = time_begin - time_end;
-    printf("begin : %u  end : %u\n", time_begin, time_end);
     total_time_spent = nb_clock_cycles / (CONFIG_CLOCK_FREQUENCY/1000.0);
 
     printf("total clock ticks : %u\n", (unsigned int) nb_clock_cycles);
@@ -157,7 +154,7 @@ static void SVM_AES(void) {
     average_time_spent_ms = total_time_spent/MEASURE_STEPS;
     f_left = (unsigned int) average_time_spent_ms;
     f_right = (unsigned int) ((average_time_spent_ms - f_left) * 1000.0);
-    printf("average SVM+AES time : %u.%u ms\n", f_left, f_right);
+    printf("average SVM+AES class %d prediction time : %u.%u ms\n", class, f_left, f_right);
 }
 
 

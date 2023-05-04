@@ -200,18 +200,18 @@ static void SVM_AES(void) {
     for(int i=0 ; i<MEASURE_STEPS ; i++) 
     {
 	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
-	    free(chiffrage); // oh la belle fuite mémoire 
 	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
 	    if(chiffrage == NULL)
 		return;
 	    
-	    free(nonce); // vu qu'on fait des boucles
 	    nonce = (uint8_t*) malloc(taille_image);
 	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
 		if (result != 1) {
 			printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
 		}
 	    encrypts(nonce, taille_image);
+	    free(chiffrage); // oh la belle fuite mémoire 
+	    free(nonce); // vu qu'on fait des boucles
     }
 
     t_aes_end = amp_millis();

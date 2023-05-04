@@ -73,26 +73,19 @@ platform = Platform()
 
 
 
-#L'erreur est ici.
 class _CRG(Module):
-    def __init__(self, platform, sys_clk_freq):
+    def __init__(self, platform, sys_clk_freq, with_rst=True):
         self.rst = Signal()
-        self.clock_domains.cd_sys    = ClockDomain()
-        self.clock_domains.cd_sys_ps = ClockDomain()
-        self.clock_domains.cd_vga    = ClockDomain()
-
+        self.clock_domains.cd_sys = ClockDomain()
         # # #
-
-        # Clk / Rst
+        # Clk/Rst.
         clk50 = platform.request("clk50")
-
-        # PLL
-        self.submodules.pll = pll = Max10PLL(speedgrade="-7")
+        # PLL.
+        self.submodules.pll = pll = Max10PLL(speedgrade='-7')
         self.comb += pll.reset.eq(self.rst)
         pll.register_clkin(clk50, 50e6)
-        pll.create_clkout(self.cd_sys,    sys_clk_freq)
-        pll.create_clkout(self.cd_sys_ps, sys_clk_freq, phase=90)
-        pll.create_clkout(self.cd_vga,    40e6)
+        pll.create_clkout(self.cd_sys, sys_clk_freq)  # jouer sur le 2e argument pour bouger la vitesse d'horloge
+        platform.add_false_path_constraints(self.cd_sys.clk, pll.clkin) # Ignore sys_clk to pll.clkin path created by SoC's rst.
 
 
 # Create our soc (fpga description)

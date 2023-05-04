@@ -31,8 +31,6 @@ class Platform(AlteraPlatform):
 platform = terasic_de10lite.Platform()
 
 
-
-#L'erreur est ici.
 class _CRG(Module):
     def __init__(self, platform, sys_clk_freq, with_rst=True):
         self.rst = Signal()
