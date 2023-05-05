@@ -8,12 +8,17 @@ with open("minicom.cap", 'r') as f:
 	for truc in liste:
 		print(truc)
 		print("\n")
-	ms = [int(truc[0]) for truc in liste] # le temps en ms
+	ms = [int(truc[0])/1000 for truc in liste] # le temps en ms
 	ms = [truc - ms[0] for truc in ms] # on part de l'origine des temps
 	watt = [int(truc[12]) for truc in liste] # la conso globale du smartpower, on a un seul channel activé
-	plt.plot(ms, watt, label="instantanné")
+	
+	fig, ax = plt.subplots()
+	ax.set_xlabel("time (s)")
+	ax.set_ylabel("consumption (mW)")
+	ax.plot(ms, watt, label="instantaneous")
 
 	#on va faire une moyenne sur 20 valeurs
-	moyenne = [sum(watt[i-10:i+10])/20 for i in (range(len(watt)))]
-	plt.plot(ms, moyenne, label="moyenne")
+	moyenne = [sum(watt[i-50:i])/50 for i in (range(len(watt)))]
+	ax.plot(ms, moyenne, label="average of last 50 points")
+	ax.legend()
 	plt.show()

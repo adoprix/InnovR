@@ -147,7 +147,7 @@ static void led_cmd(void)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 10;
+    const int MEASURE_STEPS = 200;
     uint32_t result = 0;
     float time_spent_ms, average_time;
     uint32_t total_time_begin, total_time_end, total_ticks;
@@ -157,7 +157,9 @@ static void SVM_AES(void) {
 
     printf("measuring start\n");
     printf("clock frequency : %d\n", CONFIG_CLOCK_FREQUENCY);
+    amp_millis_init();
     total_time_begin = amp_millis();
+    printf("time begin : %u\n", total_time_begin);
 
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
@@ -176,6 +178,7 @@ static void SVM_AES(void) {
     }
     total_time_end = amp_millis();
     printf("\n");
+    printf("time end : %u\n", total_time_end);
 
     /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
     total_ticks = (total_time_begin - total_time_end);

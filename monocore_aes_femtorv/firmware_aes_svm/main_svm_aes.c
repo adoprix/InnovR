@@ -108,19 +108,19 @@ static void reboot_cmd(void)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 10;
+    int MEASURE_STEPS = 200;
     uint32_t time_begin, time_end;
     float total_time_spent, average_time_spent_ms, nb_clock_cycles;
     uint8_t class;
     int f_right, f_left;
 
     int result = 0;
-
     printf("measuring start\n");
     printf("clock frequency : %d MHz\n", CONFIG_CLOCK_FREQUENCY/1000000);
     
+    amp_millis_init(); // on fait commencer le timer au max pour ne pas avoir d'overflow
     time_begin = amp_millis();
-
+    printf("time begin : %u\n", time_begin);
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
         printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
@@ -143,6 +143,8 @@ static void SVM_AES(void) {
     }
     time_end = amp_millis();
     printf("\n");
+    printf("time end : %u\n", time_end);
+    
 
     /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
     nb_clock_cycles = time_begin - time_end;

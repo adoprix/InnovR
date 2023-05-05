@@ -139,7 +139,7 @@ static void encrypts(uint8_t *nonce, size_t nlen)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 10;
+    const int MEASURE_STEPS = 40;
     float time_spent_ms;
     int f_right, f_left;
 
@@ -157,7 +157,7 @@ static void SVM_AES(void) {
     {
 	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
 	    
-	    //chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
+	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
 	    
 	    
 	    nonce = (uint8_t*) malloc(taille_image);
@@ -171,7 +171,7 @@ static void SVM_AES(void) {
 	    }
 	    encrypts(nonce, taille_image);
 	    
-	    //free(chiffrage); // oh la belle fuite mémoire 
+	    free(chiffrage); // oh la belle fuite mémoire 
 	    free(nonce); // vu qu'on fait des boucles
     }
 
