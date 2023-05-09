@@ -1,3 +1,5 @@
+// This file is Copyright (c) 2020 Florent Kermarrec <florent@enjoy-digital.fr>
+// License: BSD
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,13 +12,8 @@
 
 #include <amp_comms.h>
 #include <amp_utils.h>
-#include <svm_model.h>
-#include "img.h"
 
-amp_comms_tx_t _tx;
-amp_comms_rx_t _rx;
-float *f_img = (float *)&img;
-private_aes_data_t priv_data;
+#include "dry.h"
 
 /*-----------------------------------------------------------------------*/
 /* Uart                                                                  */
@@ -91,7 +88,7 @@ static void help(void)
     puts("Available commands:");
     puts("help               - Show this command");
     puts("reboot             - Reboot CPU");
-    puts("svm_aes            - SVM and AES on result");
+    puts("dhry               - Dhrystone benchmark");
 }
 
 /*-----------------------------------------------------------------------*/
@@ -101,60 +98,6 @@ static void help(void)
 static void reboot_cmd(void)
 {
     ctrl_reset_write(1);
-}
-
-
-
-static void SVM_AES(void) {
-    int MEASURE_STEPS = 200;
-    uint32_t time_begin, time_end;
-    float total_time_spent, average_time_spent_ms, nb_clock_cycles;
-    uint8_t class;
-    int f_right, f_left;
-
-    int result = 0;
-    printf("measuring start\n");
-    printf("clock frequency : %d MHz\n", CONFIG_CLOCK_FREQUENCY/1000000);
-    
-    amp_millis_init(); // on fait commencer le timer au max pour ne pas avoir d'overflow
-    time_begin = amp_millis();
-    printf("time begin : %u\n", time_begin);
-    for (int i = 0; i < MEASURE_STEPS; i++)
-    {
-        printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
-
-	/******* PARTIE SVM ********/
-       
-        class = predict(f_img);
-        
-        
-        /********** PARTIE AES **********/
-
-    	amp_aes_init(&priv_data);
-    	result = amp_aes_update_nonce(&priv_data);
-    	result = amp_aes_encrypts(&class, &priv_data);
-    	if (result != 0)
-    	{
-    	    printf("\e[91;1m\nError in the encryption. Err= %d\e[0m\n", result);
-    	}
-    	
-    }
-    time_end = amp_millis();
-    printf("\n");
-    printf("time end : %u\n", time_end);
-    
-
-    /* Allowing printf to display float will increase code size, so the parts of the float number are being extracted belw */
-    nb_clock_cycles = time_begin - time_end;
-    total_time_spent = nb_clock_cycles / (CONFIG_CLOCK_FREQUENCY/1000.0);
-
-    printf("total clock ticks : %u\n", (unsigned int) nb_clock_cycles);
-    printf("total time : %u ms\n",(unsigned int) total_time_spent);
-    
-    average_time_spent_ms = total_time_spent/MEASURE_STEPS;
-    f_left = (unsigned int) average_time_spent_ms;
-    f_right = (unsigned int) ((average_time_spent_ms - f_left) * 1000.0);
-    printf("average SVM+AES class %d prediction time : %u.%u ms\n", class, f_left, f_right);
 }
 
 
@@ -175,8 +118,8 @@ static void console_service(void)
         help();
     else if(strcmp(token, "reboot") == 0)
         reboot_cmd();
-    else if(strcmp(token, "svm_aes") == 0)
-        SVM_AES();
+    else if(strcmp(token, "dhry") == 0)
+        my_dhrystone();
     prompt();
 }
 

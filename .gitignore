@@ -1,6 +1,7 @@
 gateware/
 __pycache__/
 test_bazard/
+mesures/
 *.vcd
 build/
 obj/

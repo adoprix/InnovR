@@ -1,24 +1,25 @@
    text	   data	    bss	    dec	    hex	filename
- 0x74d8	 0x9ce8	  0x404	  71108	  115c4	/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes
+ 0x7a64	 0x9ce8	  0x404	  72528	  11b50	/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1b000bb8 00000001 D camera_isAwaked	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/camera/himax.c:150
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000338 00000001 D __rt_hyper_pending_emu_do_memcpy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:53
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0039fe 00000002 W illegal_insn_handler_c	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:89
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b42 00000002 T __rt_fll_deinit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:876
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b44 00000002 T __rt_flls_constructor	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:880
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd48 00000003 d ToHWDCDC_Pos	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:192
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006ee4 00000004 t ctor_list	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:29
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006f20 00000004 t dtor_list	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:30
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd10 00000004 D f_img
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101a8 00000004 B first_delayed
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd14 00000004 d MAX_BYTES_PER_REQ.1797
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffc0 00000004 b __pi_hyper_cluster_reqs_first	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:62
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0039ae 00000004 T pi_open_from_conf	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:325
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd4c 00000004 D PMURetentionState
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003e64 00000002 W illegal_insn_handler_c	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:89
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004faa 00000002 T __rt_fll_deinit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:876
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004fac 00000002 T __rt_flls_constructor	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:880
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102d8 00000003 d ToHWDCDC_Pos	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:192
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00738c 00000004 t ctor_list	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:29
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0073c8 00000004 t dtor_list	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:30
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102a0 00000004 D f_img
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010738 00000004 B first_delayed
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102a4 00000004 d MAX_BYTES_PER_REQ.1797
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010550 00000004 b __pi_hyper_cluster_reqs_first	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:62
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003e14 00000004 T pi_open_from_conf	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:325
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102dc 00000004 D PMURetentionState
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006176 00000004 T putchar	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:621
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000354 00000004 D pwmEventsStatus	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/pwm/pwm.c:9
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd58 00000004 d RetPMUStateToPMUState	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:185
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101a4 00000004 B __rt_alloc_fc_tcdm
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01019c 00000004 B __rt_alloc_l1
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101a0 00000004 B __rt_alloc_l2
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102e8 00000004 d RetPMUStateToPMUState	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:185
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010734 00000004 B __rt_alloc_fc_tcdm
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01072c 00000004 B __rt_alloc_l1
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010730 00000004 B __rt_alloc_l2
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000014 00000004 d __rt_bridge_eeprom_handle	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:25
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000010 00000004 d __rt_bridge_flash_cs	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:29
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000004 00000004 d __rt_bridge_flash_handle	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:26
@@ -27,17 +28,17 @@
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000390 00000004 D __rtc_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/dolphin/rtc.c:25
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1000001c 00000004 D __rt_cluster_fc_task_lock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:59
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000018 00000004 D __rt_cluster_nb_active_pe
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101b8 00000004 B __rt_cluster_tasks	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:41
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010748 00000004 B __rt_cluster_tasks	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:41
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1b000b9c 00000004 D __rt_debug_config
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1b000b98 00000004 D __rt_debug_config_trace
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000014 00000004 D __rt_dma_first_pending
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000010 00000004 D __rt_dma_last_pending
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffbc 00000004 b __rt_fc_cluster_device	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:25
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd2c 00000004 V __rt_fc_stack_size
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01054c 00000004 b __rt_fc_cluster_device	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:25
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102bc 00000004 V __rt_fc_stack_size
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000018 00000004 D __rt_first_free
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000324 00000004 D __rt_hyper_current_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:27
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000320 00000004 D __rt_hyper_end_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:25
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffc4 00000004 b __rt_hyper_open_count	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:65
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010554 00000004 b __rt_hyper_open_count	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:65
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000314 00000004 D __rt_hyper_pending_addr	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:33
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:0000030c 00000004 D __rt_hyper_pending_base	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:31
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000330 00000004 D __rt_hyper_pending_emu_addr	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:48
@@ -53,275 +54,281 @@
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:0000031c 00000004 D __rt_hyper_pending_repeat_size	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:35
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000340 00000004 D __rt_hyper_pending_tasks	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:39
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000344 00000004 D __rt_hyper_pending_tasks_last	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:40
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005550 00000004 T __rt_hyper_resume_copy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:988
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0059b8 00000004 T __rt_hyper_resume_copy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:988
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000308 00000004 D __rt_hyper_udma_handle
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffc8 00000004 b __rt_i2s_first	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:40
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd24 00000004 V __rt_iodev
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd28 00000004 V __rt_iodev_uart_baudrate
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffb4 00000004 V __rt_iodev_uart_channel
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffd4 00000004 b __rt_io_event_current	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:40
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffd8 00000004 b __rt_io_pending_flush	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:50
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffe0 00000004 b _rt_io_uart	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:38
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd20 00000004 V __rt_platform
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffdc 00000004 b __rt_putc_host_buffer_index	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:48
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010558 00000004 b __rt_i2s_first	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:40
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102b4 00000004 V __rt_iodev
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102b8 00000004 V __rt_iodev_uart_baudrate
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010544 00000004 V __rt_iodev_uart_channel
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010564 00000004 b __rt_io_event_current	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:40
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010568 00000004 b __rt_io_pending_flush	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:50
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010570 00000004 b _rt_io_uart	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:38
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102b0 00000004 V __rt_platform
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01056c 00000004 b __rt_putc_host_buffer_index	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:48
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:0000038c 00000004 D __rt_rtc_init_done	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/dolphin/rtc.c:26
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101b4 00000004 B __rt_wakeup_use_fast	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:173
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffb8 00000004 b timer_count	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:23
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004d38 00000006 T pi_cluster_conf_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:337
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b46 00000006 T __rt_fll_set_freq	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:884
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005e02 00000006 T semihost_exit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/semihost.c:51
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005dfc 00000006 T semihost_write0	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/semihost.c:6
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd30 00000007 d SystemStateToSCUFastSeq	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:176
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd50 00000008 D FllsFrequency
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd18 00000008 d MAX_REQS_BEFORE_RESEED.1796
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101ac 00000008 B __rt_freq_domains
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005548 00000008 T __rt_hyper_resume_emu_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:980
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010744 00000004 B __rt_wakeup_use_fast	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:173
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010548 00000004 b timer_count	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:23
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0051a0 00000006 T pi_cluster_conf_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:337
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004fae 00000006 T __rt_fll_set_freq	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:884
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102c0 00000007 d SystemStateToSCUFastSeq	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:176
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102e0 00000008 D FllsFrequency
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102a8 00000008 d MAX_REQS_BEFORE_RESEED.1796
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01073c 00000008 B __rt_freq_domains
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0059b0 00000008 T __rt_hyper_resume_emu_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:980
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:000002b0 00000008 D __rt_socevents_status
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffcc 00000008 b __rt_spim_open_count	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/spim/spim-v2.c:26
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005d72 0000000a T abort	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:739
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005704 0000000a T __rt_himax_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/camera/himax.c:400
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005184 0000000a T __rt_padframe_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:58
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0100e0 0000000c B c
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01055c 00000008 b __rt_spim_open_count	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/spim/spim-v2.c:26
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0062a8 00000008 T semihost_exit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/semihost.c:51
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0062a0 00000008 T semihost_write0	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/semihost.c:6
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006216 0000000a T abort	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:739
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b6c 0000000a T __rt_himax_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/camera/himax.c:400
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0055ec 0000000a T __rt_padframe_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:58
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010670 0000000c B c
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000004 0000000c D __rt_cluster_pool
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005dee 0000000e t __internal_semihost	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/semihost.h:75
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005732 0000000e t __rt_io_end_of_flush	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:366
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005aec 00000010 T memset	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:150
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd38 00000010 D PMUState
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006292 0000000e t __internal_semihost	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/semihost.h:75
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b9a 0000000e t __rt_io_end_of_flush	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:366
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005f5a 00000010 T memset	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:150
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102c8 00000010 D PMUState
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1b000bbc 00000010 d __rt_io_fc_lock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:35
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fc08 00000010 V __rt_padframe_default	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:28
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fc18 00000010 V __rt_padframe_hyper	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:30
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fc28 00000010 V __rt_padframe_hyper_gpio	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:32
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffa4 00000010 b __rt_uart	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:43
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006b56 00000010 T rt_uart_conf_init
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0040b2 00000012 T __rt_event_sched_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:264
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b30 00000012 T __rt_fll_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:871
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00570e 00000012 T __rt_rtc_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/dolphin/rtc.c:414
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005720 00000012 T __rt_spim_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/spim/spim-v2.c:446
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00518e 00000014 t l2_memcpy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:897
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001eae 00000014 t pmsis_exit
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010198 00000010 V __rt_padframe_default	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:28
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101a8 00000010 V __rt_padframe_hyper	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:30
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101b8 00000010 V __rt_padframe_hyper_gpio	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:32
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010534 00000010 b __rt_uart	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:43
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006ffe 00000010 T rt_uart_conf_init
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004518 00000012 T __rt_event_sched_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:264
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004f98 00000012 T __rt_fll_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:871
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b76 00000012 T __rt_rtc_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/dolphin/rtc.c:414
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b88 00000012 T __rt_spim_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/spim/spim-v2.c:446
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0055f6 00000014 t l2_memcpy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:897
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0021e0 00000014 t pmsis_exit
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:0000001c 00000014 D __rt_sched
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001660 00000016 t hal_cluster_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00164a 00000016 t hal_core_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001b26 00000016 t pi_cluster_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001b10 00000016 t pi_core_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001992 00000016 t hal_cluster_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00197c 00000016 t hal_core_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e58 00000016 t pi_cluster_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e42 00000016 t pi_core_id
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1b000ba0 00000018 d cbsys_first	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:30
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e60 00000018 t rt_cluster_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e78 00000018 t rt_core_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00409a 00000018 T rt_event_wait	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:257
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fc38 00000018 V __rt_padframe_profiles
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00425a 00000018 t __rt_time_poweroff	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:28
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004272 00000018 t __rt_time_poweron	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:37
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003f20 00000018 T __rt_wait_event_prepare_blocking	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:42
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001694 0000001a t cpu_perf_conf
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0016ae 0000001a t cpu_perf_setall
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005cbc 0000001a T fputc_locked
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003fac 0000001a T rt_event_get	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:105
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b32 0000001a T strchr	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:278
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019d0 0000001a t timer_cnt_lo_get
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c20 0000001c t pi_perf_conf
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002522 0000001c t rotword
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c82 0000001c t __rt_event_enqueue	/home/jamorin/gap_sdk/install/GAP8_V3/include/rt/rt_event.h:405
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c04 0000001c t __rt_team_barrier
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00160c 0000001e t core_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001676 0000001e t cpu_perf_conf_events
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001972 0000001e t eu_dispatch_push
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001990 0000001e t eu_dispatch_team_config
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e90 0000001e t pmsis_kickoff
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003dfe 0000001e T __rt_bridge_clear_notif	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:838
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003dc0 0000001e T __rt_bridge_set_available	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:725
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004304 0000001e T rt_time_wait_us	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:176
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ab6 0000001e t timer_count_get
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ad4 0000001e t timer_reset
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001af2 0000001e t timer_start
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00162a 00000020 t cluster_id
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0018d6 00000020 t eu_bar_addr
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005ec6 00000020 t _rlrshift	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:122
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c9e 00000020 t __rt_bridge_check_bridge_req.part.5	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:638
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003dde 00000020 T __rt_bridge_send_notif	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:821
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00582a 00000020 t rt_event_execute.isra.4.constprop.12	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:795
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0040c4 00000020 T rt_user_alloc_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:193
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0018f6 00000022 t eu_bar_trig_wait_clr
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c60 00000022 t pi_perf_fc_reset
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001cd6 00000022 t pi_perf_fc_start
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0041a6 00000022 T __rt_alloc_init_l1	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:445
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003fc6 00000022 T rt_event_get_blocking	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:127
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006a5e 00000022 t __rt_uart_setfreq_after	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:135
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003b8c 00000022 T __rt_utils_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:84
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019ae 00000022 t timer_cfg_lo_set
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001a0c 00000022 t timer_reset_lo_set
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019ea 00000022 t timer_start_lo_set
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c3c 00000024 t pi_perf_cl_reset
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001cb2 00000024 t pi_perf_cl_start
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d4e 00000024 t pi_perf_fc_stop
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0051a2 00000024 t rt_event_enqueue	/home/jamorin/gap_sdk/install/GAP8_V3/include/rt/rt_event.h:419
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003fe8 00000024 T rt_event_push	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:139
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001b3c 00000024 t __rt_team_barrier_config
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006a3a 00000024 t __rt_uart_setup.isra.5	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:222
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001a92 00000024 t timer_conf_set
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0037fa 00000026 t cluster_start	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:198
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d28 00000026 t pi_perf_cl_stop
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005ac6 00000026 t __rt_io_stop	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:769
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006a14 00000026 T __rt_uart_cluster_req_done	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:253
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00473c 00000026 t soc_eu_fcEventMask_setEvent	/home/jamorin/gap_sdk/install/GAP8_V3/include/hal/soc_eu/soc_eu_v1.h:60
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006b30 00000026 t soc_eu_fcEventMask_setEvent	/home/jamorin/gap_sdk/install/GAP8_V3/include/hal/soc_eu/soc_eu_v1.h:60
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00194a 00000028 t eu_bar_setup
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fbe0 00000028 D intercepts
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005cd6 00000028 T _prf_locked	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:626
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0041c8 00000028 T __rt_alloc_init_l1_for_fc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:452
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003986 00000028 T __rt_deinit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:163
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003ef8 00000028 T __rt_event_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:32
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101bc 00000028 B __rt_fc_cluster_data
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00565e 00000028 t __rt_i2s_setfreq_after	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:235
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00515c 00000028 T rt_padframe_set	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:77
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002192 00000018 t rt_cluster_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0021aa 00000018 t rt_core_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004500 00000018 T rt_event_wait	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:257
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101c8 00000018 V __rt_padframe_profiles
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0046c0 00000018 t __rt_time_poweroff	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:28
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0046d8 00000018 t __rt_time_poweron	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:37
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004386 00000018 T __rt_wait_event_prepare_blocking	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:42
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019c6 0000001a t cpu_perf_conf
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019e0 0000001a t cpu_perf_setall
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00612c 0000001a T fputc_locked
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004412 0000001a T rt_event_get	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:105
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005fa0 0000001a T strchr	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:278
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d02 0000001a t timer_cnt_lo_get
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001f52 0000001c t pi_perf_conf
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002986 0000001c t rotword
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0040e8 0000001c t __rt_event_enqueue	/home/jamorin/gap_sdk/install/GAP8_V3/include/rt/rt_event.h:405
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001f36 0000001c t __rt_team_barrier
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00193e 0000001e t core_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019a8 0000001e t cpu_perf_conf_events
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ca4 0000001e t eu_dispatch_push
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001cc2 0000001e t eu_dispatch_team_config
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0021c2 0000001e t pmsis_kickoff
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004264 0000001e T __rt_bridge_clear_notif	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:838
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004226 0000001e T __rt_bridge_set_available	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:725
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001de8 0000001e t timer_count_get
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e06 0000001e t timer_reset
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e24 0000001e t timer_start
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00195c 00000020 t cluster_id
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c08 00000020 t eu_bar_addr
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00636e 00000020 t _rlrshift	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:122
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004104 00000020 t __rt_bridge_check_bridge_req.part.5	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:638
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004244 00000020 T __rt_bridge_send_notif	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:821
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005c92 00000020 t rt_event_execute.isra.4.constprop.12	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:795
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00476a 00000020 T rt_time_wait_us	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:176
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00452a 00000020 T rt_user_alloc_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:193
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c28 00000022 t eu_bar_trig_wait_clr
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001f92 00000022 t pi_perf_fc_reset
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002008 00000022 t pi_perf_fc_start
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00460c 00000022 T __rt_alloc_init_l1	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:445
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00442c 00000022 T rt_event_get_blocking	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:127
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006f06 00000022 t __rt_uart_setfreq_after	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:135
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003ff2 00000022 T __rt_utils_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:84
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ce0 00000022 t timer_cfg_lo_set
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d3e 00000022 t timer_reset_lo_set
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d1c 00000022 t timer_start_lo_set
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001f6e 00000024 t pi_perf_cl_reset
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001fe4 00000024 t pi_perf_cl_start
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002080 00000024 t pi_perf_fc_stop
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00560a 00000024 t rt_event_enqueue	/home/jamorin/gap_sdk/install/GAP8_V3/include/rt/rt_event.h:419
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00444e 00000024 T rt_event_push	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:139
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e6e 00000024 t __rt_team_barrier_config
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006ee2 00000024 t __rt_uart_setup.isra.5	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:222
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001dc4 00000024 t timer_conf_set
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c60 00000026 t cluster_start	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:198
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0021f4 00000026 t __pi_freq_get_domain
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00205a 00000026 t pi_perf_cl_stop
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006ebc 00000026 T __rt_uart_cluster_req_done	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:253
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004ba4 00000026 t soc_eu_fcEventMask_setEvent	/home/jamorin/gap_sdk/install/GAP8_V3/include/hal/soc_eu/soc_eu_v1.h:60
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006fd8 00000026 t soc_eu_fcEventMask_setEvent	/home/jamorin/gap_sdk/install/GAP8_V3/include/hal/soc_eu/soc_eu_v1.h:60
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c7c 00000028 t eu_bar_setup
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010170 00000028 D intercepts
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00617a 00000028 T _prf_locked	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:626
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00462e 00000028 T __rt_alloc_init_l1_for_fc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:452
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003dec 00000028 T __rt_deinit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:163
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00435e 00000028 T __rt_event_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:32
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01074c 00000028 B __rt_fc_cluster_data
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005ac6 00000028 t __rt_i2s_setfreq_after	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:235
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005f32 00000028 t __rt_io_stop	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:769
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0055c4 00000028 T rt_padframe_set	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/pads/pads-v1.c:77
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:000002b8 00000028 D __rt_udma_extra_callback
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:000002e0 00000028 D __rt_udma_extra_callback_arg
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002082 0000002a T main
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004070 0000002a T __rt_wait_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:247
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001b92 0000002c t pi_cl_team_fork
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005e08 0000002c T printf	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/fprintf.c:41
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005c90 0000002c T puts	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:576
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005686 0000002c t __rt_i2s_setfreq_before	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:219
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fde0 0000002c b __rt_pulpos_emu_global_cluster_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:26
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006ac2 0000002c t __rt_uart_setfreq_before	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:102
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004710 0000002c t SetFllMultDivFactors
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ffe4 0000002e B priv_data
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004178 0000002e T rt_alloc
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c82 00000030 t pi_perf_reset
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001cf8 00000030 t pi_perf_start
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003b5c 00000030 T __rt_cbsys_exec	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:71
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001a2e 00000030 t timer_base_fc
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001918 00000032 t eu_bar_setup_mask
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004e14 00000032 T pi_cluster_close	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:370
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d72 00000032 t pi_perf_stop
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003bae 00000032 T __rt_fc_lock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:92
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001b60 00000032 t __rt_team_config
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003782 00000032 T _set
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0024e6 0000002a T main
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0044d6 0000002a T __rt_wait_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:247
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ec4 0000002c t pi_cl_team_fork
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0062b0 0000002c T printf	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/fprintf.c:41
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006100 0000002c T puts	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:576
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005aee 0000002c t __rt_i2s_setfreq_before	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:219
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010370 0000002c b __rt_pulpos_emu_global_cluster_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:26
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006f6a 0000002c t __rt_uart_setfreq_before	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:102
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b78 0000002c t SetFllMultDivFactors
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00221a 0000002e t pi_freq_get
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010574 0000002e B priv_data
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0045de 0000002e T rt_alloc
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006146 00000030 T fputc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:603
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001fb4 00000030 t pi_perf_reset
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00202a 00000030 t pi_perf_start
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003fc2 00000030 T __rt_cbsys_exec	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:71
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d60 00000030 t timer_base_fc
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001c4a 00000032 t eu_bar_setup_mask
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00527c 00000032 T pi_cluster_close	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:370
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0020a4 00000032 t pi_perf_stop
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004014 00000032 T __rt_fc_lock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:92
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e92 00000032 t __rt_team_config
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003be8 00000032 T _set
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000358 00000034 D dev_rtc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/dolphin/rtc.c:24
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005f2a 00000034 t _get_digit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:167
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003ec4 00000034 T __rt_bridge_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:851
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003be0 00000034 T __rt_fc_unlock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:127
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00562a 00000034 t __rt_i2s_resume	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:186
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0058ba 00000034 t __rt_putc_host_cluster_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:451
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006c42 00000034 T rt_uart_cluster_write	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:277
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001a5e 00000034 t timer_base_cl
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005afc 00000036 T memcpy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:159
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c4c 00000036 T __rt_fc_cluster_unlock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:199
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c14 00000038 T __rt_fc_cluster_lock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:189
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003e1c 0000003a T __rt_bridge_printf_flush
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001de2 0000003c t pi_perf_fc_read
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004eb6 0000003c T __rt_cluster_new	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:445
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004ef2 0000003c t __rt_cluster_pulpos_emu_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:29
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005baa 0000003c T __rt_putc_uart	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:412
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001f54 0000003e T cluster_delegate
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001da4 0000003e t pi_perf_cl_read
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003b1e 0000003e T __rt_cbsys_add	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:57
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0046d2 0000003e T __rt_freq_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/freq.c:62
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004a36 00000040 T InitFlls	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:858
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005790 00000040 t __rt_do_putc_host	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:430
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001e1e 00000042 t pi_perf_read
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006aee 00000042 t __rt_uart_cluster_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:266
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006a80 00000042 t __rt_uart_wait_tx_done.isra.6	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:222
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005ee6 00000044 t _ldiv5	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:143
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00521e 00000044 t __pi_hyper_copy_exec
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00373c 00000046 T _copy
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0037b4 00000046 T _double_byte
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003cbe 00000046 t __rt_bridge_wait
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001bbe 00000046 t rt_team_fork
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005114 00000048 T pi_cluster_send_task_to_cl	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster_call.c:149
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0040e4 00000048 T rt_user_alloc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:207
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003d76 0000004a T __rt_bridge_check_connection
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004688 0000004a T rt_freq_set_and_get	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/freq.c:30
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0039b2 0000004c T rt_irq_set_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:61
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00412c 0000004c T rt_user_free	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:291
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006bf4 0000004e T rt_uart_close	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:228
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002400 00000050 T amp_aes_update_nonce
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005262 00000050 t exec_pending_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:867
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003a00 00000050 T __rt_handle_illegal_instr	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:94
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005554 00000050 t __rt_hyper_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:995
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005740 00000050 t __rt_io_uart_wait_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:315
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0015ba 00000052 t pi_cluster_task
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0056b2 00000052 T __rt_i2s_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:268
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003a50 00000052 T __rt_irq_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:103
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0045d4 00000056 T __rt_periph_wait_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/periph-v2.c:237
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0051c6 00000058 T __pi_hyper_copy_aligned	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:480
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00297c 00000058 t sub_bytes
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002dd0 0000005a t arrInc
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0057d0 0000005a t __rt_io_start	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:746
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004fbe 0000005c T rt_cluster_mount	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:68
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006c76 0000005c T __rt_uart_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:292
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00462a 0000005e T __rt_periph_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/periph-v2.c:276
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b4c 0000005e T __rt_putc_debug_bridge	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:288
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b4c 00000062 t __rt_init_cluster_data	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:72
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004bae 00000064 t __rt_cluster_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:382
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00400c 00000064 T __rt_event_execute	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:189
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0041f0 0000006a T __rt_allocs_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:465
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003e56 0000006e T __rt_bridge_req_shutdown	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:774
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002b82 00000070 t mix_columns
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004e46 00000070 T __rt_cluster_push_fc_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:413
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00584a 00000070 t __rt_io_lock
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0058ee 00000070 t __rt_io_unlock
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003d04 00000072 T __rt_bridge_handle_notif	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:644
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005d7c 00000072 T __rt_io_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:800
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005cfe 00000074 T exit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:690
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003f38 00000074 T rt_event_alloc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:52
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00428a 0000007a T rt_event_push_delayed	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:59
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003aa2 0000007c t __rt_fc_cluster_lock_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:142
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fe0c 00000080 b __pi_hyper_temp_buffer	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:160
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00ff24 00000080 b __rt_io_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:39
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fd5c 00000080 d __rt_putc_host_buffer	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:47
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0055a4 00000086 T __pi_gpio_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/gpio/gpio-v2.c:54
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003264 00000086 T tc_ccm_config
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001532 00000088 T __extendsfdf2	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/extendsfdf2.c:37
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004762 0000008c T __rt_pmu_cluster_power_down	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:205
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004322 0000008c T __rt_time_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:188
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006b66 0000008e T __rt_uart_open	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:151
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004f2e 00000090 T rt_cluster_call	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:40
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ec2 00000092 T cluster_helloworld
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005a34 00000092 t __rt_io_uart_wait_pending	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:332
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005e34 00000092 t _to_x	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:44
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fe8c 00000098 b __rt_gpio	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/gpio/gpio-v2.c:34
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0048cc 000000a2 T InitOneFll	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:771
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005be6 000000aa t tfp_putc.isra.9	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:795
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0063d2 00000034 t _get_digit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:167
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00432a 00000034 T __rt_bridge_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:851
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004046 00000034 T __rt_fc_unlock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:127
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005a92 00000034 t __rt_i2s_resume	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:186
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005d22 00000034 t __rt_putc_host_cluster_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:451
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0070ea 00000034 T rt_uart_cluster_write	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:277
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001d90 00000034 t timer_base_cl
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005f6a 00000036 T memcpy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:159
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0040b2 00000036 T __rt_fc_cluster_unlock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:199
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00407a 00000038 T __rt_fc_cluster_lock	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:189
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004282 0000003a T __rt_bridge_printf_flush
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002114 0000003c t pi_perf_fc_read
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00531e 0000003c T __rt_cluster_new	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:445
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00535a 0000003c t __rt_cluster_pulpos_emu_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:29
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006018 0000003c T __rt_putc_uart	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:412
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002248 0000003e T cluster_delegate
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0020d6 0000003e t pi_perf_cl_read
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003f84 0000003e T __rt_cbsys_add	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:57
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004b3a 0000003e T __rt_freq_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/freq.c:62
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004e9e 00000040 T InitFlls	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:858
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005bf8 00000040 t __rt_do_putc_host	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:430
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002150 00000042 t pi_perf_read
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006f96 00000042 t __rt_uart_cluster_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:266
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006f28 00000042 t __rt_uart_wait_tx_done.isra.6	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:222
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00638e 00000044 t _ldiv5	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:143
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005686 00000044 t __pi_hyper_copy_exec
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003ba2 00000046 T _copy
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c1a 00000046 T _double_byte
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004124 00000046 t __rt_bridge_wait
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001ef0 00000046 t rt_team_fork
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00557c 00000048 T pi_cluster_send_task_to_cl	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster_call.c:149
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00454a 00000048 T rt_user_alloc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:207
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0041dc 0000004a T __rt_bridge_check_connection
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004af0 0000004a T rt_freq_set_and_get	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/freq.c:30
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003e18 0000004c T rt_irq_set_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:61
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004592 0000004c T rt_user_free	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:291
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00709c 0000004e T rt_uart_close	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:228
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002864 00000050 T amp_aes_update_nonce
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0056ca 00000050 t exec_pending_task	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:867
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003e66 00000050 T __rt_handle_illegal_instr	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:94
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0059bc 00000050 t __rt_hyper_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:995
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005ba8 00000050 t __rt_io_uart_wait_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:315
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0018ec 00000052 t pi_cluster_task
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005b1a 00000052 T __rt_i2s_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/i2s/i2s-v1.c:268
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003eb6 00000052 T __rt_irq_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/irq.c:103
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004a3c 00000056 T __rt_periph_wait_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/periph-v2.c:237
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00562e 00000058 T __pi_hyper_copy_aligned	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:480
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002de0 00000058 t sub_bytes
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003234 0000005a t arrInc
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005c38 0000005a t __rt_io_start	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:746
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005426 0000005c T rt_cluster_mount	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:68
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00711e 0000005c T __rt_uart_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:292
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004a92 0000005e T __rt_periph_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/periph-v2.c:276
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005fba 0000005e T __rt_putc_debug_bridge	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:288
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004fb4 00000062 t __rt_init_cluster_data	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:72
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005016 00000064 t __rt_cluster_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:382
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004472 00000064 T __rt_event_execute	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:189
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004656 0000006a T __rt_allocs_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/alloc.c:465
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0042bc 0000006e T __rt_bridge_req_shutdown	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:774
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002fe6 00000070 t mix_columns
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0052ae 00000070 T __rt_cluster_push_fc_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:413
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005cb2 00000070 t __rt_io_lock
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005d56 00000070 t __rt_io_unlock
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00416a 00000072 T __rt_bridge_handle_notif	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/bridge.c:644
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006220 00000072 T __rt_io_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:800
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0061a2 00000074 T exit	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:690
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00439e 00000074 T rt_event_alloc	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/events.c:52
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0046f0 0000007a T rt_event_push_delayed	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:59
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003f08 0000007c t __rt_fc_cluster_lock_req	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/utils.c:142
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01039c 00000080 b __pi_hyper_temp_buffer	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:160
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0104b4 00000080 b __rt_io_event	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:39
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0102ec 00000080 d __rt_putc_host_buffer	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:47
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005a0c 00000086 T __pi_gpio_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/gpio/gpio-v2.c:54
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0036ca 00000086 T tc_ccm_config
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001864 00000088 T __extendsfdf2	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/extendsfdf2.c:37
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004bca 0000008c T __rt_pmu_cluster_power_down	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:205
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00478a 0000008c T __rt_time_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time.c:188
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00700e 0000008e T __rt_uart_open	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers_deprecated/uart/uart.c:151
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0017d4 00000090 T __floatunsisf	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/floatunsisf.c:35
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005396 00000090 T rt_cluster_call	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/pulpos_emu.c:40
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005ea0 00000092 t __rt_io_uart_wait_pending	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:332
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0062dc 00000092 t _to_x	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:44
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01041c 00000098 b __rt_gpio	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/gpio/gpio-v2.c:34
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004d34 000000a2 T InitOneFll	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:771
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001730 000000a4 T __floatsisf	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/floatsisf.c:35
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006054 000000ac t tfp_putc.isra.9	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:795
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001298 000000ae T __ledf2	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/ledf2.c:35
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001298 000000ae T __ltdf2	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/ledf2.c:36
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0100ec 000000b0 B s
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004a76 000000ba T __rt_pmu_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:472
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00fc50 000000c0 D __hal_debug_struct
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c010018 000000c8 B ctx
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00496e 000000c8 T __rt_pmu_cluster_power_up
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002450 000000d2 T amp_aes_encrypts
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004d3e 000000d6 T pi_cluster_open	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:343
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00595e 000000d6 t __rt_io_uart_flush.constprop.11	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:795
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0047ee 000000de T SetFllFrequency
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002bf2 000000e8 t shift_rows
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001f92 000000f0 T helloworld
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0043ae 000000f2 T __rt_timer_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time_irq.c:30
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0032ea 000000f6 t ccm_cbc_mac
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002cda 000000f6 T tc_aes_encrypt
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00501a 000000fa T pi_cluster_send_task_to_cl_async	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster_call.c:65
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0070c8 00000100 R __clz_tab
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0071c8 00000100 r sbox
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002e2a 00000112 t tc_ctr_prng_update
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004c12 00000126 t __rt_cluster_mount_step	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:221
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0044a0 00000134 T rt_periph_copy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/periph-v2.c:58
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0033e0 0000014a t ccm_ctr_mode
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003820 00000166 T __rt_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:74
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0020ac 00000168 T predict
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002f3c 0000016c T tc_ctr_prng_init
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0029d4 000001ae t mult_row_column
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00253e 000001bc T tc_aes128_set_encrypt_key
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0030a8 000001bc T tc_ctr_prng_generate
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002214 000001ec T amp_aes_init
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001346 000001ec T __mulsf3	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/mulsf3.c:35
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0016c8 0000020e t cpu_perf_get
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00352a 00000212 T tc_ccm_generation_encryption
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c01067c 000000b0 B s
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004ede 000000ba T __rt_pmu_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/gap/pmu_driver.c:472
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002428 000000be T wrapper_SVM_AES
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0101e0 000000c0 D __hal_debug_struct
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0105a8 000000c8 B ctx
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004dd6 000000c8 T __rt_pmu_cluster_power_up
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0028b4 000000d2 T amp_aes_encrypts
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0051a6 000000d6 T pi_cluster_open	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:343
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005dc6 000000da t __rt_io_uart_flush.constprop.11	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/io.c:795
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004c56 000000de T SetFllFrequency
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003056 000000e8 t shift_rows
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004816 000000f2 T __rt_timer_handler	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/time_irq.c:30
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003750 000000f6 t ccm_cbc_mac
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00313e 000000f6 T tc_aes_encrypt
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005482 000000fa T pi_cluster_send_task_to_cl_async	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster_call.c:65
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c007654 00000100 R __clz_tab
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c007754 00000100 r sbox
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00328e 00000112 t tc_ctr_prng_update
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00507a 00000126 t __rt_cluster_mount_step	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/cluster.c:221
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c004908 00000134 T rt_periph_copy	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/periph-v2.c:58
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003846 0000014a t ccm_ctr_mode
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003c86 00000166 T __rt_init	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/kernel/init.c:74
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002510 00000168 T predict
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0033a0 0000016c T tc_ctr_prng_init
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002286 000001a2 t SVM_AES
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002e38 000001ae t mult_row_column
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0029a2 000001bc T tc_aes128_set_encrypt_key
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00350c 000001be T tc_ctr_prng_generate
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002678 000001ec T amp_aes_init
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001544 000001ec T __mulsf3	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/mulsf3.c:35
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c001346 000001fe T __divsf3	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/divsf3.c:35
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0019fa 0000020e t cpu_perf_get
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c003990 00000212 T tc_ccm_generation_encryption
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:00000030 00000280 D periph_channels
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0026fa 00000282 t add_round_key
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0052b2 00000296 t __pi_hyper_copy_misaligned	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:806
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c002b5e 00000282 t add_round_key
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00571a 00000296 t __pi_hyper_copy_misaligned	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/drivers/hyper/hyperram-v1.c:806
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c00096c 0000032e T __umoddi3	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/libgcc2.c:1305
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c000630 0000033c T __udivdi3	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/libgcc2.c:1317
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c000c9a 000005fe T __adddf3	/home/yao/tools/riscv-gnu-toolchain/riscv-gcc/libgcc/soft-fp/adddf3.c:35
 /home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1b000398 00000800 D __rt_fc_stack
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c005f5e 00000ab6 T _prf	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:437
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c007520 00000c40 D img
-/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c008160 00007a80 D coefficients
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c006406 00000ab6 T _prf	/home/jamorin/gap_sdk/gap8/rtos/pulp/pulp-os/libs/io/prf.c:437
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c007ab0 00000c40 D img
+/home/jamorin/InnovR/GAPuino/svm_aes/BUILD/GAP8_V3/GCC_RISCV_PULPOS/svm_aes:1c0086f0 00007a80 D coefficients
