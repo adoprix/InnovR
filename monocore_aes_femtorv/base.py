@@ -84,7 +84,7 @@ class _CRG(Module):
         self.submodules.pll = pll = Max10PLL(speedgrade='-7')
         self.comb += pll.reset.eq(self.rst)
         pll.register_clkin(clk50, 50e6)
-        pll.create_clkout(self.cd_sys, 2*sys_clk_freq)  # jouer sur le 2e argument pour bouger la vitesse d'horloge
+        pll.create_clkout(self.cd_sys, sys_clk_freq)  # jouer sur le 2e argument pour bouger la vitesse d'horloge
         platform.add_false_path_constraints(self.cd_sys.clk, pll.clkin) # Ignore sys_clk to pll.clkin path created by SoC's rst.
 
 
