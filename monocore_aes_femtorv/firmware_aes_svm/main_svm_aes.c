@@ -1,5 +1,3 @@
-// This file is Copyright (c) 2020 Florent Kermarrec <florent@enjoy-digital.fr>
-// License: BSD
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -19,7 +19,7 @@ OBJECTS := $(AMP_LIB_OBJ) \
 		 crt0.o 
 
 all: main.elf main.bin
-#il faut load le demo.bin
+#il faut load le .bin
 
 #voir https://www.sifive.com/blog/all-aboard-part-1-compiler-args
 #CFLAGS += -march=rv32imac -mabi=ilp32

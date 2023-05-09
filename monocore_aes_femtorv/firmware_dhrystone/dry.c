@@ -351,19 +351,29 @@
 
 /* variables for time measurement: */
 
+#include <amp_comms.h> // MODIF
+#include <amp_utils.h> // MODIF
+
+#define Start_Timer() Begin_Time = amp_millis() // MODIF
+#define Stop_Timer()  End_Time   = amp_millis() // MODIF
+#define Too_Small_Time 2 // MODIF // Measurements should last at least 2 seconds
+#define CLOCK_TYPE "internal clock" // MODIF
+#define HZ CONFIG_CLOCK_FREQUENCY // MODIF
+
+/* MODIF
 #ifdef TIME
 
 #define CLOCK_TYPE "time()"
 #undef HZ
-#define HZ	(1) /* time() returns time in seconds */
-extern long     time(); /* see library function "time"  */
-#define Too_Small_Time 2 /* Measurements should last at least 2 seconds */
+#define HZ	(1) // time() returns time in seconds 
+extern long     time(); // see library function "time"  
+#define Too_Small_Time 2 // Measurements should last at least 2 seconds 
 #define Start_Timer() Begin_Time = time ( (long *) 0)
 #define Stop_Timer()  End_Time   = time ( (long *) 0)
 
 #else
 
-#ifdef MSC_CLOCK /* Use Microsoft C hi-res clock */
+#ifdef MSC_CLOCK // Use Microsoft C hi-res clock 
 
 #undef HZ
 #undef TIMES
@@ -376,29 +386,29 @@ extern clock_t	clock();
 #define Stop_Timer()  End_Time   = clock()
 
 #else
-                /* Use times(2) time function unless    */
-                /* explicitly defined otherwise         */
+                // Use times(2) time function unless    
+                // explicitly defined otherwise         
 #define CLOCK_TYPE "times()"
 #include <sys/types.h>
 #include <sys/times.h>
-#ifndef HZ	/* Added by SP 900619 */
-#include <sys/param.h> /* If your system doesn't have this, use -DHZ=xxx */
+#ifndef HZ	// Added by SP 900619 
+#include <sys/param.h> / If your system doesn't have this, use -DHZ=xxx 
 #else
-	*** You must define HZ!!! ***
-#endif /* HZ */
+	// *** You must define HZ!!! ***
+#endif // HZ 
 #ifndef PASS2
 struct tms      time_info;
 #endif
-/*extern  int     times ();*/
-                /* see library function "times" */
+//extern  int     times ();
+                // see library function "times" 
 #define Too_Small_Time (2*HZ)
-                /* Measurements should last at least about 2 seconds */
+                // Measurements should last at least about 2 seconds 
 #define Start_Timer() times(&time_info); Begin_Time=(long)time_info.tms_utime
 #define Stop_Timer()  times(&time_info); End_Time = (long)time_info.tms_utime
 
-#endif /* MSC_CLOCK */
-#endif /* TIME */
-
+#endif // MSC_CLOCK 
+#endif // TIME 
+*/
 
 #define Mic_secs_Per_Second     1000000.0
 #define NUMBER_OF_RUNS		50000 /* Default number of runs */
@@ -474,7 +484,7 @@ char            Ch_1_Glob,
 int             Arr_1_Glob [50];
 int             Arr_2_Glob [50] [50];
 
-extern char     *malloc ();
+//extern char     *malloc ();  //MODIF
 Enumeration     Func_1 ();
   /* forward declaration necessary since Enumeration may not simply be int */
 
@@ -798,6 +808,8 @@ int my_dhrystone (int argc, char *argv[])
   }
 
   /* Initializations */
+  
+  amp_millis_init(); // MODIF
 
   Next_Ptr_Glob = (Rec_Pointer) malloc (sizeof (Rec_Type));
   Ptr_Glob = (Rec_Pointer) malloc (sizeof (Rec_Type));
