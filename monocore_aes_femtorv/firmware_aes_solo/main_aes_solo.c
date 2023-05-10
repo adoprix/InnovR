@@ -142,7 +142,7 @@ static void encrypts(uint8_t *nonce, size_t nlen, uint8_t* res)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 100;
+    const int MEASURE_STEPS = 20;
     float time_spent_ms;
     int f_right, f_left;
 
