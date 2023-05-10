@@ -116,3 +116,4 @@ int amp_aes_encrypts(uint8_t *class, private_aes_data_t *priv_d)
 
 	return 0;
 }
+

@@ -163,9 +163,13 @@ static void SVM_AES(void) {
 
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
-        printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS); // REMOVE lors des tests pour pas de calcul inutile
-
+        printf("Measuring step : %d/%d  ;  class : %d  ;  Cyphered class : %d\r",i+1, MEASURE_STEPS, class_predicted, priv_data.ciphertext[0]); 
+        
+        /******* PARTIE SVM ********/
+        
         class_predicted = predict(f_img);
+        
+        /********** PARTIE AES **********/
         
         amp_aes_init(&priv_data);
     	result = amp_aes_update_nonce(&priv_data);

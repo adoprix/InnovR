@@ -21,7 +21,7 @@
 
 float *f_img = (float *)&img;
 uint8_t* nonce;
-uint32_t taille_image;
+uint32_t TAILLE_IMAGE;
 TCCtrPrng_t ctx;
 
 /*-----------------------------------------------------------------------*/
@@ -155,26 +155,25 @@ static void led_cmd(void)
  * @param counter 		The pointer for the counter
  * @param len_counter 	The size of the counter
  */
-static void encrypts(uint8_t *nonce, size_t nlen)
+static void encrypts(uint8_t *nonce, size_t nlen, uint8_t* res)
 {	
 
 	uint8_t nist_key[KEY_SIZE_BYTES];
 	uint8_t tag[MAC_LEN];
+	int result;
 
 	/* Setting encryption configs */
-	uint8_t* res = malloc(taille_image);
-
 	mbedtls_gcm_context ctx;
 
 	mbedtls_gcm_init(&ctx);
 
-	int result = mbedtls_gcm_setkey(&ctx, MBEDTLS_CIPHER_ID_AES, nist_key, KEY_SIZE_BITS);
+	result = mbedtls_gcm_setkey(&ctx, MBEDTLS_CIPHER_ID_AES, nist_key, KEY_SIZE_BITS);
 	if (result == MBEDTLS_ERR_GCM_BAD_INPUT){
 		printf("\e[91;1mError setting the encryption key\e[0m\n");
 	}
 	
 	/* Encryption phase */
-	result = mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_ENCRYPT, taille_image, nonce, nlen, NULL, 0, (uint8_t *) f_img, res, MAC_LEN, &tag[0]);
+	result = mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_ENCRYPT, TAILLE_IMAGE, nonce, nlen, NULL, 0, (uint8_t *) f_img, res, MAC_LEN, &tag[0]);
 	if (result == MBEDTLS_ERR_GCM_BAD_INPUT) {
 			printf("\e[91;1mError in the text encryption\e[0m\n");
 	}
@@ -183,7 +182,7 @@ static void encrypts(uint8_t *nonce, size_t nlen)
 
 
 static void SVM_AES(void) {
-    const int MEASURE_STEPS = 40;
+    const int MEASURE_STEPS = 100;
     float time_spent_ms;
     int f_right, f_left;
 
@@ -199,17 +198,21 @@ static void SVM_AES(void) {
     
     for(int i=0 ; i<MEASURE_STEPS ; i++) 
     {
-	    printf("Measuring step: %d/%d\r",i+1, MEASURE_STEPS);
-	    chiffrage = malloc(sizeof(img) + 50); // +50 au cas où
-	    if(chiffrage == NULL)
-		return;
+	    chiffrage = (uint8_t*) malloc(TAILLE_IMAGE + 50); // +50 au cas où
 	    
-	    nonce = (uint8_t*) malloc(taille_image);
-	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, taille_image);
-		if (result != 1) {
-			printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
-		}
-	    encrypts(nonce, taille_image);
+	    nonce = (uint8_t*) malloc(TAILLE_IMAGE);
+	    if(nonce == NULL || chiffrage == NULL) {
+	        printf("erreur de malloc\n");
+		return;
+	    }
+	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, TAILLE_IMAGE);
+	    if (result != 1) {
+	    	printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
+	    }
+	    encrypts(nonce, TAILLE_IMAGE, chiffrage);
+	    
+	    printf("Measuring step: %d/%d ; first 8 bytes of cyphered image : %ld \r\n",i+1, MEASURE_STEPS, (uint64_t) *chiffrage);
+	    
 	    free(chiffrage); // oh la belle fuite mémoire 
 	    free(nonce); // vu qu'on fait des boucles
     }
@@ -270,7 +273,7 @@ int main(void)
     /* Generating nonce */
 
 	int result = 1;
-	taille_image = sizeof(img) * sizeof(float);
+	TAILLE_IMAGE = sizeof(img);
 	uint8_t entropy[256] = {0x7f, 0x40, 0x80, 0x46, 0x93, 0x55, 0x2e, 0x31, 0x75, 0x23, 0xfd, 0xa6, 0x93, 0x5a, 0x5b, 0xc8, 0x14, 0x35, 0x3b, 0x1f, 0xbb, 0x7d, 0x33, 0x49, 0x64, 0xac, 0x4d, 0x1d, 0x12, 0xdd, 0xcc, 0xce};
 
 	result = tc_ctr_prng_init(&ctx, &entropy[0], sizeof(entropy), NULL, 0);

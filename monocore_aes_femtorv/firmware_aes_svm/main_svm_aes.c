@@ -106,7 +106,7 @@ static void reboot_cmd(void)
 
 
 static void SVM_AES(void) {
-    int MEASURE_STEPS = 200;
+    int MEASURE_STEPS = 400;
     uint32_t time_begin, time_end;
     float total_time_spent, average_time_spent_ms, nb_clock_cycles;
     uint8_t class;
@@ -116,12 +116,14 @@ static void SVM_AES(void) {
     printf("measuring start\n");
     printf("clock frequency : %d MHz\n", CONFIG_CLOCK_FREQUENCY/1000000);
     
+    priv_data.ciphertext[0] = 0; class = 0; // on initialise
+    
     amp_millis_init(); // on fait commencer le timer au max pour ne pas avoir d'overflow
     time_begin = amp_millis();
     printf("time begin : %u\n", time_begin);
     for (int i = 0; i < MEASURE_STEPS; i++)
     {
-        printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
+        printf("Measuring step : %d/%d  ;  class : %d  ;  Cyphered class : %d\r",i+1, MEASURE_STEPS, class, priv_data.ciphertext[0]); 
 
 	/******* PARTIE SVM ********/
        
