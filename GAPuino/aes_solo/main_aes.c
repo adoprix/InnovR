@@ -1,13 +1,20 @@
 /* PMSIS includes */
 #include "pmsis.h"
+
 #include "img.h"
-#include "svm_model.h"
 #include "aes.h"
+#include <mbedtls/gcm.h>
+#include <mbedtls/cipher.h>
+#include <tinycrypt/ctr_prng.h>
 
 float *f_img = (float *)&img;
 private_aes_data_t priv_data;
-#define NB_CORES 1
-#define MEASURE_STEPS NB_CORES*20
+uint8_t* nonce;
+uint32_t TAILLE_IMAGE;
+TCCtrPrng_t ctx;
+int truc = 0;
+#define NB_CORES 4
+#define MEASURE_STEPS NB_CORES*5
 
 /* Task executed by cluster cores. */
 /*
@@ -49,42 +56,68 @@ void cluster_delegate(void *arg)
 }
 
 
+static void encrypts(uint8_t *nonce, size_t nlen, uint8_t* res)
+{	
+
+	uint8_t nist_key[KEY_SIZE_BYTES];
+	uint8_t tag[MAC_LEN];
+	int result;
+
+	/* Setting encryption configs */
+	mbedtls_gcm_context ctx_encrypt;
+
+	mbedtls_gcm_init(&ctx_encrypt);
+	
+	//if(!truc) { // décommenter la condition pour vérifier que les résultats sont identiques à clé constante
+	//truc = 1;
+	result = mbedtls_gcm_setkey(&ctx_encrypt, MBEDTLS_CIPHER_ID_AES, nist_key, KEY_SIZE_BITS);
+	if (result == MBEDTLS_ERR_GCM_BAD_INPUT){
+		printf("\e[91;1mError setting the encryption key\e[0m\n");
+	}
+	//}
+	
+	/* Encryption phase */
+	result = mbedtls_gcm_crypt_and_tag(&ctx_encrypt, MBEDTLS_GCM_ENCRYPT, TAILLE_IMAGE, nonce, nlen, NULL, 0, (uint8_t *) f_img, res, MAC_LEN, &tag[0]);
+	if (result == MBEDTLS_ERR_GCM_BAD_INPUT) {
+			printf("\e[91;1mError in the text encryption\e[0m\n");
+	}
+
+}
+
 static void SVM_AES(void) {
     uint32_t cycles, tim_cycles;
     float total_time_spent, average_time_spent_ms;
-    volatile uint8_t class;
-    volatile int result = 0;
+    uint8_t class;
+    uint8_t* chiffrage;
+    int result = 0;
     
     pi_perf_conf(1 << PI_PERF_CYCLES | 1 << PI_PERF_ACTIVE_CYCLES);
     pi_perf_reset();
     pi_perf_start();
-
-    //printf("clock frequency : %d MHz\n", CONFIG_CLOCK_FREQUENCY/1000000);
-    
-    //amp_millis_init(); // on fait commencer le timer au max pour ne pas avoir d'overflow
-    //time_begin = amp_millis();
     
     for (int i = 0; i < MEASURE_STEPS / NB_CORES; i++)
     {
-        //printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS / NB_CORES); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
+            printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS / NB_CORES); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
 
-	/******* PARTIE SVM ********/
-       
-        class = predict(f_img);
-        
-        
-        /********** PARTIE AES **********/
-
-    	amp_aes_init(&priv_data);
-    	result = amp_aes_update_nonce(&priv_data);
-    	result = amp_aes_encrypts(&class, &priv_data);
-    	if (result != 0)
-    	{
-    	    printf("\e[91;1m\nError in the encryption. Err= %d\e[0m\n", result);
-    	}
+	    chiffrage = (uint8_t*) malloc(TAILLE_IMAGE + 50); // +50 au cas où
+	    
+	    nonce = (uint8_t*) malloc(TAILLE_IMAGE);
+	    if(nonce == NULL || chiffrage == NULL) {
+	        printf("erreur de malloc\n");
+		return;
+	    }
+	    result = tc_ctr_prng_generate(&ctx, NULL, 0, nonce, TAILLE_IMAGE);
+	    if (result != 1) {
+	    	printf("\e[91;1mError in the Nonce generation : %d\e[0m\n", result);
+	    }
+	    encrypts(nonce, TAILLE_IMAGE, chiffrage);
+	    
+	    printf("Measuring step: %d/%d ; first 8 bytes of cyphered image : %ld \r\n",i+1, MEASURE_STEPS, (uint64_t) *chiffrage);
+	    
+	    free(chiffrage); // oh la belle fuite mémoire 
+	    free(nonce); // vu qu'on fait des boucles
     	
     }
-    //time_end = amp_millis();
     pi_perf_stop();
     printf("\n");
     cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
@@ -96,7 +129,7 @@ static void SVM_AES(void) {
     printf("SVM+AES average time : %fms \n", average_time_spent_ms);
 }
 
-void wrapper_SVM_AES(void)
+void wrapper_AES(void)
 {
     printf("Entering main controller\n");
 
@@ -135,6 +168,18 @@ void wrapper_SVM_AES(void)
 int main(void)
 {
     printf("\n\n\t *** PMSIS HelloWorld ***\n\n");
-    return pmsis_kickoff((void *) wrapper_SVM_AES);
+    
+    /* Generating nonce */
+
+	int result = 1;
+	TAILLE_IMAGE = sizeof(img);
+	uint8_t entropy[256] = {0x7f, 0x40, 0x80, 0x46, 0x93, 0x55, 0x2e, 0x31, 0x75, 0x23, 0xfd, 0xa6, 0x93, 0x5a, 0x5b, 0xc8, 0x14, 0x35, 0x3b, 0x1f, 0xbb, 0x7d, 0x33, 0x49, 0x64, 0xac, 0x4d, 0x1d, 0x12, 0xdd, 0xcc, 0xce};
+
+	result = tc_ctr_prng_init(&ctx, &entropy[0], sizeof(entropy), NULL, 0);
+	if (result != 1) {
+		printf("\e[91;1mError in the PRNG init\e[0m\n");
+	}
+    
+    return pmsis_kickoff((void *) wrapper_AES);
 }
 
