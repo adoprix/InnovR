@@ -1,5 +1,6 @@
 /* PMSIS includes */
 #include "pmsis.h"
+#include "stdlib.h"
 
 #include "img.h"
 #include "aes.h"

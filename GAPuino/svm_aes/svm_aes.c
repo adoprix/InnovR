@@ -6,21 +6,12 @@
 
 float *f_img = (float *)&img;
 private_aes_data_t priv_data;
-#define NB_CORES 1
-#define MEASURE_STEPS NB_CORES*20
+#define NB_CORES 8
+#define MEASURE_STEPS 160*400
 
 /* Task executed by cluster cores. */
-/*
-void cluster_helloworld(void *arg)
-{
-    uint32_t core_id = pi_core_id(), cluster_id = pi_cluster_id();
-    uint8_t class = predict(f_img);
-    int result = 0;
-    amp_aes_init(&priv_data);
-    result = amp_aes_update_nonce(&priv_data);
-    result = amp_aes_encrypts(&class, &priv_data); // le résultat est stocké dans priv_data
-    printf("[%d %d] class : %d\n", cluster_id, core_id, class); 
-}*/
+
+
 
 static void SVM_AES(void);
 /* Cluster main entry, executed by core 0. */
@@ -30,22 +21,37 @@ void cluster_delegate(void *arg)
     printf("Cluster master core entry\n");
     /* Task dispatch to cluster cores. */
     
-    printf("measuring start\n");
-    //result = pi_freq_set(PI_FREQ_DOMAIN_FC, 2*pi_freq_get(PI_FREQ_DOMAIN_FC));
-    if(result == -1) {
-    	printf("erreur au changement de fréquence du controller...\n");
-    	pmsis_exit(-3);
-    }
     result = pi_freq_set(PI_FREQ_DOMAIN_CL, 4*pi_freq_get(PI_FREQ_DOMAIN_CL));
     if(result == -1) {
     	printf("erreur au changement de fréquence du cluster...\n");
     	pmsis_exit(-3);
     }
-    printf("FC frequency : %d\n", pi_freq_get(PI_FREQ_DOMAIN_FC));
-    printf("cluster core frequency : %dHz\n", pi_freq_get(PI_FREQ_DOMAIN_CL));
+    
+    //result = pi_freq_set(PI_FREQ_DOMAIN_FC, 4*pi_freq_get(PI_FREQ_DOMAIN_FC));
+    if(result == -1) {
+    	printf("erreur au changement de fréquence du controller...\n");
+    	pmsis_exit(-3);
+    }
+    
+    printf("number of cores : %d\n", NB_CORES);
+    printf("FC frequency : %dkHz\n", pi_freq_get(PI_FREQ_DOMAIN_FC)/1000);
+    printf("cluster core frequency : %dkHz\n", pi_freq_get(PI_FREQ_DOMAIN_CL)/1000);
+    
+    pi_perf_conf(1 << PI_PERF_CYCLES | 1 << PI_PERF_ACTIVE_CYCLES);
+    pi_perf_reset();
     
     pi_cl_team_fork(NB_CORES, SVM_AES, arg);
     printf("Cluster master core exit\n");
+    
+    printf("\n");
+    int cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+    int tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+    printf("Perf : %d cycles  ;  Timer : %d cycles\n", cycles, tim_cycles);
+    float total_time_spent = (float) tim_cycles/(float) pi_freq_get(PI_FREQ_DOMAIN_CL); // secondes
+    float average_time_spent_ms = 1000 * total_time_spent / (MEASURE_STEPS / NB_CORES); // millisecondes
+    printf("Total time : %fs\n", total_time_spent);
+    printf("SVM+AES average time : %fms \n", average_time_spent_ms);
+    printf("taking parallelization into accout : %fms\n", average_time_spent_ms / NB_CORES);
 }
 
 
@@ -54,19 +60,16 @@ static void SVM_AES(void) {
     float total_time_spent, average_time_spent_ms;
     volatile uint8_t class;
     volatile int result = 0;
-    
-    pi_perf_conf(1 << PI_PERF_CYCLES | 1 << PI_PERF_ACTIVE_CYCLES);
-    pi_perf_reset();
-    pi_perf_start();
 
-    //printf("clock frequency : %d MHz\n", CONFIG_CLOCK_FREQUENCY/1000000);
-    
-    //amp_millis_init(); // on fait commencer le timer au max pour ne pas avoir d'overflow
-    //time_begin = amp_millis();
+    pi_perf_start();
     
     for (int i = 0; i < MEASURE_STEPS / NB_CORES; i++)
     {
-        //printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS / NB_CORES); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
+    /*
+    //décommenter si besoin de monitorer la mesure de perf. A priori pas nécessaire car les résultats de perfs avec et sans le printf sont les mêmes, donc pas d'opti fourbe du compilo
+    	pi_perf_stop();
+        printf("Measuring step : %d/%d\r",i+1, MEASURE_STEPS / NB_CORES); // il faut forcer le compilateur à ne pas supprimer la ligne de prédiction en pensant qu'elle est inutile, donc on affiche class
+        pi_perf_start();*/
 
 	/******* PARTIE SVM ********/
        
@@ -84,16 +87,7 @@ static void SVM_AES(void) {
     	}
     	
     }
-    //time_end = amp_millis();
     pi_perf_stop();
-    printf("\n");
-    cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
-    tim_cycles = pi_perf_read(PI_PERF_CYCLES);
-    printf("Perf : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
-    total_time_spent = (float) tim_cycles/(float) pi_freq_get(PI_FREQ_DOMAIN_CL); // secondes
-    average_time_spent_ms = 1000 * total_time_spent / (MEASURE_STEPS / NB_CORES); // millisecondes
-    printf("Total time : %fs\n", total_time_spent);
-    printf("SVM+AES average time : %fms \n", average_time_spent_ms);
 }
 
 void wrapper_SVM_AES(void)
