@@ -6,11 +6,12 @@ MBEDTLS=$(RESSOURCES)/mbedtls
 AMP_LIB=$(RESSOURCES)/amp_lib
 
 AMP_INCLUDE=$(AMP_LIB)/include
-			
-MBEDTLS_SOURCES := $(MBEDTLS)/source/gcm.c \
-			$(MBEDTLS)/source/cipher.c\
-			$(MBEDTLS)/source/aes.c\
-			$(MBEDTLS)/source/ccm.c\
+
+MBEDTLS_SOURCES = $(MBEDTLS)/source/ccm.c \
+			$(MBEDTLS)/source/gcm.c \
+			$(MBEDTLS)/source/cipher.c \
+			$(MBEDTLS)/source/cipher_wrap.c \
+			$(MBEDTLS)/source/aes.c
 			
 			
 TINYCRYPT_SOURCES := $(TINYCRYPT)/source/aes_decrypt.c \
@@ -25,7 +26,7 @@ TINYCRYPT_SOURCES := $(TINYCRYPT)/source/aes_decrypt.c \
 APP              = main_aes
 
 # App sources
-APP_SRCS         = main_aes.c aes.c cipher_wrap.c $(TINYCRYPT_SOURCES) $(MBEDTLS_SOURCES)
+APP_SRCS         = main_aes.c aes.c $(TINYCRYPT_SOURCES) $(MBEDTLS_SOURCES)
 
 # App includes  :  img.h aes.h
 APP_INC	  = $(AMP_INCLUDE)

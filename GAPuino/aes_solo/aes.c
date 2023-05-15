@@ -77,7 +77,7 @@ int amp_aes_update_nonce(private_aes_data_t *priv_data)
 /**
  * @brief Encryption top function
  * 
- * @param priv_d 	The pointer for the struct holding the private AES 				information
+ * @param priv_d 	The pointer for the struct holding the private AES information
  * @return int 	Returns 0 if success, < 0 if an error ocurred
  */	
 int amp_aes_encrypts(uint8_t *class, private_aes_data_t *priv_d)
