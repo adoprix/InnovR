@@ -38,11 +38,11 @@ def traitement(nom_dossier):
 			ax.plot(ms, moyenne_big, label="average of last 200 measures")
 			
 			moyenne = round(sum(watt) / len(watt), 1)
-			watt = sorted(watt)
+			watt = sorted(watt[len(watt) // 4 : 3*len(watt) // 4])
 			mediane = round(watt[int(len(watt) / 2)], 1)
 			variance = sum([(elt - moyenne)**2 for elt in watt]) / len(watt)
 			ecart_type = round(sqrt(variance), 1)
-			plt.figtext(0.02, 0.9, f"\naverage : {moyenne}W       median : {mediane}W\nstandard deviation : {ecart_type}W\n", fontsize=11)
+			plt.figtext(0.02, 0.9, f"\naverage : {moyenne}mW       median : {mediane}mW\nstandard deviation : {ecart_type}mW\n", fontsize=11)
 			
 			ax.legend()
 
